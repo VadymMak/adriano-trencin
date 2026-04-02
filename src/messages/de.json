@@ -92,6 +92,22 @@
       "fuzi":          { "name": "Fuži mit schwarzem Trüffel",    "desc": "Istrische Fuži, schwarzer Trüffel, Sahne" }
     }
   },
+  "gallery": {
+    "label": "Galerie",
+    "title": "Atmosphäre & Speisen",
+    "items": [
+      "Restaurantatmosphäre", "Gegrillter Oktopus", "Bavette Fruti di Mare",
+      "Abendatmosphäre", "Thunfischsteak", "Meeresfrüchte-Paella",
+      "Bar & Weine", "Hummer mit Beilage", "Pizza Adriano",
+      "Sommerterrasse", "Desserts", "Wein aus Istrien"
+    ]
+  },
+  "instagram": {
+    "label": "Folgen Sie uns",
+    "title": "@adrianorestaurantcafe",
+    "subtitle": "Jeden Tag neue Spezialitäten auf Instagram",
+    "followBtn": "Auf Instagram folgen"
+  },
   "meta": {
     "title": "Adriano – Restaurant & Cafe Trenčín",
     "description": "Mittelmeerküche, Meeresfrüchte und Weine im Herzen von Trenčín."

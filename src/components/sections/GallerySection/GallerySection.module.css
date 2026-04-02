@@ -1,0 +1,119 @@
+.section {
+  background-color: var(--color-bg-primary);
+  border-top: 1px solid var(--color-border);
+  padding: 100px 0;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Header ─── */
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ocean-label);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--color-gold);
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+}
+
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--color-gold);
+  margin: 0 auto;
+}
+
+/* ─── Masonry grid ─── */
+
+.grid {
+  columns: 3;
+  column-gap: 12px;
+}
+
+.card {
+  break-inside: avoid;
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  background-color: var(--color-bg-tertiary);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform var(--transition);
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.large  { height: 400px; }
+.medium { height: 280px; }
+.small  { height: 200px; }
+
+/* ─── Overlay ─── */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  transition: background var(--transition);
+}
+
+.card:hover .overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.caption {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-primary);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.card:hover .caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 900px) {
+  .grid {
+    columns: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    columns: 1;
+  }
+
+  .large  { height: 280px; }
+  .medium { height: 220px; }
+  .small  { height: 180px; }
+}

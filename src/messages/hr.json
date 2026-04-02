@@ -92,6 +92,22 @@
       "fuzi":          { "name": "Fuži s crnim tartufom",          "desc": "Istarski fuži, crni tartuf, vrhnje" }
     }
   },
+  "gallery": {
+    "label": "Galerija",
+    "title": "Atmosfera & jela",
+    "items": [
+      "Atmosfera restorana", "Hobotnica na žaru", "Bavette Fruti di Mare",
+      "Večernja atmosfera", "Odrezak od tune", "Paella plodovi mora",
+      "Bar & vina", "Jastog s prilogom", "Pizza Adriano",
+      "Ljetna terasa", "Deserti", "Vino iz Istre"
+    ]
+  },
+  "instagram": {
+    "label": "Pratite nas",
+    "title": "@adrianorestaurantcafe",
+    "subtitle": "Svaki dan nove specijalitete na Instagramu",
+    "followBtn": "Pratite na Instagramu"
+  },
   "meta": {
     "title": "Adriano – Restoran & Cafe Trenčín",
     "description": "Mediteranska kuhinja, plodovi mora i vina u srcu Trenčína."

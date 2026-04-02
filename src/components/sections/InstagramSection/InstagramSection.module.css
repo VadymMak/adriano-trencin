@@ -1,0 +1,137 @@
+.section {
+  background-color: var(--color-bg-secondary);
+  padding: 100px 0;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Header ─── */
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ocean-label);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 400;
+  color: var(--color-gold);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+/* ─── Grid 3×3 ─── */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+/* ─── Card ─── */
+
+.card {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  background-color: var(--color-bg-tertiary);
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+
+.card:hover .overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.heart {
+  color: var(--color-text-primary);
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.card:hover .heart {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.igIcon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color var(--transition);
+}
+
+.card:hover .igIcon {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ─── CTA ─── */
+
+.cta {
+  display: flex;
+  justify-content: center;
+}
+
+.followBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  border: 1px solid var(--color-gold);
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--color-gold);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background var(--transition), color var(--transition);
+}
+
+.followBtn:hover {
+  background: var(--color-gold);
+  color: #0a0a0a;
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 600px) {
+  .grid {
+    gap: 4px;
+  }
+}

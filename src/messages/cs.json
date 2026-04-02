@@ -92,6 +92,22 @@
       "fuzi":          { "name": "Fuži s černým lanýžem",        "desc": "Istrské fuži, černý lanýž, smetana" }
     }
   },
+  "gallery": {
+    "label": "Galerie",
+    "title": "Atmosféra & jídla",
+    "items": [
+      "Atmosféra restaurace", "Chobotnice na grilu", "Bavette Fruti di Mare",
+      "Večerní atmosféra", "Steak z tuňáka", "Paella plody moře",
+      "Bar & vína", "Humr s přílohou", "Pizza Adriano",
+      "Letní terasa", "Dezerty", "Víno z Istrie"
+    ]
+  },
+  "instagram": {
+    "label": "Sledujte nás",
+    "title": "@adrianorestaurantcafe",
+    "subtitle": "Každý den nové speciality na Instagramu",
+    "followBtn": "Sledovat na Instagramu"
+  },
   "meta": {
     "title": "Adriano – Restaurace & Cafe Trenčín",
     "description": "Středomořská kuchyně, mořské plody a vína v srdci Trenčína."

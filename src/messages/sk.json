@@ -92,6 +92,22 @@
       "fuzi":          { "name": "Fuži s čiernou hľuzovkou",   "desc": "Istrské fuži, čierna hľuzovka, smotana" }
     }
   },
+  "gallery": {
+    "label": "Galéria",
+    "title": "Atmosféra & jedlá",
+    "items": [
+      "Atmosféra reštaurácie", "Chobotnica na grile", "Bavette Fruti di Mare",
+      "Večerná atmosféra", "Steak z tuniaka", "Paella plody mora",
+      "Bar & vína", "Homár s prílohou", "Pizza Adriano",
+      "Letná terasa", "Dezerty", "Víno z Istrie"
+    ]
+  },
+  "instagram": {
+    "label": "Sledujte nás",
+    "title": "@adrianorestaurantcafe",
+    "subtitle": "Každý deň nové špeciality na Instagrame",
+    "followBtn": "Sledovať na Instagrame"
+  },
   "meta": {
     "title": "Adriano – Reštaurácia & Cafe Trenčín",
     "description": "Stredomorská kuchyňa, morské plody a vína v srdci Trenčína."
