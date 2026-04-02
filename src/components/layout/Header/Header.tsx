@@ -60,6 +60,7 @@ export default function Header() {
   const [langOpen, setLangOpen] = useState(false);
   const [hidden, setHidden]     = useState(false);
   const lastScrollY             = useRef(0);
+  const isProgrammaticScroll    = useRef(false);
   const t                       = useTranslations('nav');
   const currentLocale             = useLocale();
 
@@ -75,13 +76,27 @@ export default function Header() {
   useEffect(() => {
     const THRESHOLD = 10;
     const handleScroll = () => {
+      if (isProgrammaticScroll.current) return;
       const currentY = window.scrollY;
       if (Math.abs(currentY - lastScrollY.current) < THRESHOLD) return;
       setHidden(currentY > lastScrollY.current && currentY > 80);
       lastScrollY.current = currentY;
     };
+
+    const onProgrammaticStart = () => { isProgrammaticScroll.current = true; };
+    const onProgrammaticEnd   = () => {
+      isProgrammaticScroll.current = false;
+      lastScrollY.current = window.scrollY;
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('programmatic-scroll-start', onProgrammaticStart);
+    window.addEventListener('programmatic-scroll-end',   onProgrammaticEnd);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('programmatic-scroll-start', onProgrammaticStart);
+      window.removeEventListener('programmatic-scroll-end',   onProgrammaticEnd);
+    };
   }, []);
 
   // Keep --sticky-offset CSS var in sync with header visibility

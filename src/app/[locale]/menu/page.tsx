@@ -17,7 +17,11 @@ export default function MenuPage() {
   const scrollToCategory = (categoryId: string) => {
     const el = document.getElementById(categoryId);
     if (!el) return;
+    window.dispatchEvent(new Event('programmatic-scroll-start'));
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => {
+      window.dispatchEvent(new Event('programmatic-scroll-end'));
+    }, 1000);
   };
 
   function handleFilter(id: string) {
