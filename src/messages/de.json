@@ -8,12 +8,15 @@
     "reservation": "Reservierung"
   },
   "hero": {
-    "title": "Adriano Trenčín",
-    "subtitle": "Italienisches Restaurant im Herzen von Trenčín",
-    "cta": "Tisch reservieren"
+    "badge": "Trenčín · námestie sv. Anny 3",
+    "title": "ADRIANO",
+    "subtitle": "Restaurant & Cafe",
+    "tagline": "Mittelmeerküche · Meeresfrüchte · Weine",
+    "ctaReservation": "Tisch reservieren",
+    "ctaMenu": "Speisekarte ansehen"
   },
   "meta": {
-    "title": "Adriano – Italienisches Restaurant Trenčín",
-    "description": "Authentische italienische Küche in Trenčín. Pizza, Pasta, Weine."
+    "title": "Adriano – Restaurant & Cafe Trenčín",
+    "description": "Mittelmeerküche, Meeresfrüchte und Weine im Herzen von Trenčín."
   }
 }
