@@ -131,16 +131,9 @@ a.block:hover {
 /* ── Map ── */
 
 .mapWrap {
-  height: 450px;
+  background: var(--color-bg-tertiary);
   border-radius: var(--border-radius-md);
   overflow: hidden;
-  background: var(--color-bg-tertiary);
-}
-
-.mapWrap iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
 }
 
 /* ── Responsive ── */

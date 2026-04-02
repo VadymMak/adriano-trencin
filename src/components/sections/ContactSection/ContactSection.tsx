@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import LeafletMap from '@/components/ui/LeafletMap/LeafletMap';
 import styles from './ContactSection.module.css';
 
 function AddressIcon() {
@@ -138,15 +139,11 @@ export default function ContactSection() {
 
           {/* ── Right: map ── */}
           <div className={styles.mapWrap}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2628.123!2d18.044!3d48.894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47194547f0000001%3A0x1234!2sN%C3%A1mestie+sv.+Anny+3%2C+Tren%C4%8D%C3%ADn!5e0!3m2!1ssk!2ssk!4v1234567890"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Adriano Restaurant na mape"
+            <LeafletMap
+              lat={48.8942}
+              lng={18.0442}
+              label="Adriano Restaurant & Cafe"
+              height={450}
             />
           </div>
 
