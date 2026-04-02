@@ -212,12 +212,6 @@
 
 /* ─── Group block (info column) ─── */
 
-.groupBlock {
-  padding: 20px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
-}
-
 .groupBlock h3 {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
@@ -305,9 +299,10 @@
   color: var(--color-gold);
 }
 
-.divider {
-  height: 1px;
-  background: var(--color-border);
+.infoBlockDivider {
+  border-bottom: 0.5px solid var(--color-border-ocean);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
 }
 
 /* ─── Responsive ─── */

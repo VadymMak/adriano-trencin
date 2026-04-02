@@ -223,16 +223,14 @@ export default function ReservationSection() {
 
           {/* ─── Info column ─── */}
           <div className={styles.info}>
-            <div className={styles.infoBlock}>
+            <div className={`${styles.infoBlock} ${styles.infoBlockDivider}`}>
               <h3>{t('hours')}</h3>
               {HOURS_INDICES.map((i) => (
                 <p key={i}>{t(`hoursRows.${i}`)}</p>
               ))}
             </div>
 
-            <div className={styles.divider} />
-
-            <div className={styles.infoBlock}>
+            <div className={`${styles.infoBlock} ${styles.infoBlockDivider}`}>
               <h3>{t('label')}</h3>
               <p>{t('address')}</p>
               <p>
@@ -242,8 +240,6 @@ export default function ReservationSection() {
                 <a href={`mailto:${t('emailInfo')}`}>{t('emailInfo')}</a>
               </p>
             </div>
-
-            <div className={styles.divider} />
 
             <div className={styles.groupBlock}>
               <h3>{t('groupTitle')}</h3>
