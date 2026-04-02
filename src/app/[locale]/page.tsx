@@ -13,9 +13,9 @@ export default function HomePage() {
       <FeaturedSection />
       <AboutSection />
       <ReviewsSection />
-      <ReservationSection />
       <GallerySection />
       <InstagramSection />
+      <ReservationSection />
     </>
   );
 }

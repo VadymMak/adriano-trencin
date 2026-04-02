@@ -40,35 +40,35 @@
   margin: 0 auto;
 }
 
-/* ─── Masonry grid ─── */
+/* ─── Grid rows ─── */
 
-.grid {
-  columns: 3;
-  column-gap: 12px;
+.row1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
+.row2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* ─── Cards ─── */
+
 .card {
-  break-inside: avoid;
-  display: block;
-  width: 100%;
-  margin-bottom: 12px;
   position: relative;
   overflow: hidden;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-md);
   background-color: var(--color-bg-tertiary);
   background-size: cover;
   background-position: center;
   cursor: pointer;
-  transition: transform var(--transition);
 }
 
-.card:hover {
-  transform: scale(1.02);
-}
-
-.large  { height: 400px; }
-.medium { height: 280px; }
-.small  { height: 200px; }
+.cardLarge  { height: 400px; }
+.cardMedium { height: 280px; }
 
 /* ─── Overlay ─── */
 
@@ -77,22 +77,25 @@
   inset: 0;
   background: rgba(0, 0, 0, 0);
   display: flex;
-  align-items: flex-end;
-  padding: 16px;
+  align-items: center;
+  justify-content: center;
   transition: background var(--transition);
 }
 
 .card:hover .overlay {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .caption {
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  color: var(--color-text-primary);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
   opacity: 0;
-  transform: translateY(6px);
+  transform: translateY(8px);
   transition: opacity var(--transition), transform var(--transition);
+  text-align: center;
+  padding: 0 16px;
 }
 
 .card:hover .caption {
@@ -102,18 +105,15 @@
 
 /* ─── Responsive ─── */
 
-@media (max-width: 900px) {
-  .grid {
-    columns: 2;
-  }
-}
-
-@media (max-width: 600px) {
-  .grid {
-    columns: 1;
+@media (max-width: 768px) {
+  .row1,
+  .row2 {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
-  .large  { height: 280px; }
-  .medium { height: 220px; }
-  .small  { height: 180px; }
+  .row1 { margin-bottom: 8px; }
+
+  .cardLarge,
+  .cardMedium { height: 250px; }
 }
