@@ -1,10 +1,11 @@
 :root {
-  --color-bg: #fafaf8;
+  --color-bg: #0a0a0a;
   --color-text: #1a1a1a;
   --color-accent: #c8a96e;
   --color-accent-dark: #a8894e;
   --color-muted: #6b6b6b;
   --color-border: #e0e0d8;
+  --hero-bg-image: url("/images/hero.jpg");
 
   --font-primary: var(--font-geist), Arial, Helvetica, sans-serif;
 
