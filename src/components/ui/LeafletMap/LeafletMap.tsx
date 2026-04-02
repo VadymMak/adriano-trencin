@@ -84,8 +84,14 @@ export default function LeafletMap({ lat, lng, label, height = 450 }: LeafletMap
 
       mapInstanceRef.current = map;
 
-      // Fix tile rendering after CSS Grid layout settles
-      setTimeout(() => { map.invalidateSize(); }, 200);
+      // Fix tile rendering + set aria-label on Leaflet marker (Lighthouse a11y)
+      setTimeout(() => {
+        map.invalidateSize();
+        containerRef.current?.querySelectorAll('.leaflet-marker-icon').forEach((el) => {
+          el.setAttribute('aria-label', label);
+          el.setAttribute('role', 'img');
+        });
+      }, 300);
     });
 
     return () => {

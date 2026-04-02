@@ -105,8 +105,9 @@ export default function ReservationSection() {
               <form className={styles.form} onSubmit={handleSubmit} noValidate>
                 <div className={styles.row}>
                   <div className={errors.name ? `${styles.field} ${styles.fieldError}` : styles.field}>
-                    <label>{t('fields.name')}</label>
+                    <label htmlFor="res-name">{t('fields.name')}</label>
                     <input
+                      id="res-name"
                       type="text"
                       placeholder={t('fields.namePlaceholder')}
                       value={form.name}
@@ -114,8 +115,9 @@ export default function ReservationSection() {
                     />
                   </div>
                   <div className={errors.phone ? `${styles.field} ${styles.fieldError}` : styles.field}>
-                    <label>{t('fields.phone')}</label>
+                    <label htmlFor="res-phone">{t('fields.phone')}</label>
                     <input
+                      id="res-phone"
                       type="tel"
                       placeholder={t('fields.phonePlaceholder')}
                       value={form.phone}
@@ -125,8 +127,9 @@ export default function ReservationSection() {
                 </div>
 
                 <div className={errors.email ? `${styles.field} ${styles.fieldError}` : styles.field}>
-                  <label>{t('fields.email')}</label>
+                  <label htmlFor="res-email">{t('fields.email')}</label>
                   <input
+                    id="res-email"
                     type="email"
                     placeholder={t('fields.emailPlaceholder')}
                     value={form.email}
@@ -136,16 +139,18 @@ export default function ReservationSection() {
 
                 <div className={styles.row}>
                   <div className={errors.date ? `${styles.field} ${styles.fieldError}` : styles.field}>
-                    <label>{t('fields.date')}</label>
+                    <label htmlFor="res-date">{t('fields.date')}</label>
                     <input
+                      id="res-date"
                       type="date"
                       value={form.date}
                       onChange={e => change('date', e.target.value)}
                     />
                   </div>
                   <div className={errors.time ? `${styles.field} ${styles.fieldError}` : styles.field}>
-                    <label>{t('fields.time')}</label>
+                    <label htmlFor="res-time">{t('fields.time')}</label>
                     <input
+                      id="res-time"
                       type="time"
                       placeholder={t('fields.timePlaceholder')}
                       value={form.time}
@@ -155,8 +160,9 @@ export default function ReservationSection() {
                 </div>
 
                 <div className={errors.guests ? `${styles.field} ${styles.fieldError}` : styles.field}>
-                  <label>{t('fields.guests')}</label>
+                  <label htmlFor="res-guests">{t('fields.guests')}</label>
                   <select
+                    id="res-guests"
                     value={guests === 0 ? '' : guests}
                     onChange={e => {
                       const count = Number(e.target.value);
@@ -188,8 +194,9 @@ export default function ReservationSection() {
                 )}
 
                 <div className={styles.field}>
-                  <label>{t('fields.message')}</label>
+                  <label htmlFor="res-message">{t('fields.message')}</label>
                   <textarea
+                    id="res-message"
                     placeholder={t('fields.messagePlaceholder')}
                     value={form.message}
                     onChange={e => change('message', e.target.value)}

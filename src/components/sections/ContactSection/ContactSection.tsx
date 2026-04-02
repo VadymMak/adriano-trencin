@@ -112,6 +112,7 @@ export default function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialBtn}
+                aria-label="Sledujte nás na Instagrame"
               >
                 <InstagramIcon />
                 {t('instagram')}
@@ -121,6 +122,7 @@ export default function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialBtn}
+                aria-label="Sledujte nás na Facebooku"
               >
                 <FacebookIcon />
                 {t('facebook')}
@@ -130,6 +132,7 @@ export default function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.socialBtn} ${styles.socialBtnWhatsApp}`}
+                aria-label="Kontaktujte nás cez WhatsApp"
               >
                 <WhatsAppIcon />
                 {t('whatsapp')}
