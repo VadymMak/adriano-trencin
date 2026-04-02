@@ -4,8 +4,14 @@
     "menu": "Jelovnik",
     "about": "O nama",
     "gallery": "Galerija",
+    "blog": "Blog",
     "contact": "Kontakt",
     "reservation": "Rezervacija"
+  },
+  "blog": {
+    "label": "Adriano Blog",
+    "title": "Blog",
+    "comingSoon": "Pripremamo zanimljive članke o hrani, vinima i životu u Trenčínu."
   },
   "hero": {
     "badge": "Trenčín · námestie sv. Anny 3",

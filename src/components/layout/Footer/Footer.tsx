@@ -63,6 +63,7 @@ const NAV_LINKS = [
   { label: 'Menu',        href: '#menu' },
   { label: 'O nás',       href: '#about' },
   { label: 'Galéria',     href: '#gallery' },
+  { label: 'Blog',        href: '/blog' },
   { label: 'Rezervácia',  href: '#reservation' },
   { label: 'Kontakt',     href: '#contact' },
 ];

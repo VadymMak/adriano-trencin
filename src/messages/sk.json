@@ -4,8 +4,14 @@
     "menu": "Jedálny lístok",
     "about": "O nás",
     "gallery": "Galéria",
+    "blog": "Blog",
     "contact": "Kontakt",
     "reservation": "Rezervácia"
+  },
+  "blog": {
+    "label": "Adriano Blog",
+    "title": "Blog",
+    "comingSoon": "Pripravujeme zaujímavé články o jedle, vínach a živote v Trenčíne."
   },
   "hero": {
     "badge": "Trenčín · námestie sv. Anny 3",

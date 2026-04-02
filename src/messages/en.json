@@ -4,8 +4,14 @@
     "menu": "Menu",
     "about": "About",
     "gallery": "Gallery",
+    "blog": "Blog",
     "contact": "Contact",
     "reservation": "Reservation"
+  },
+  "blog": {
+    "label": "Adriano Blog",
+    "title": "Blog",
+    "comingSoon": "We are preparing interesting articles about food, wines and life in Trenčín."
   },
   "hero": {
     "badge": "Trenčín · námestie sv. Anny 3",

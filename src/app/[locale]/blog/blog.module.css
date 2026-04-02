@@ -1,0 +1,43 @@
+.page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-primary);
+}
+
+.inner {
+  text-align: center;
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: clamp(24px, 5vw, 42px);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background: var(--color-gold);
+  margin: 24px auto;
+}
+
+.coming {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  letter-spacing: 1px;
+}

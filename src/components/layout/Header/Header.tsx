@@ -14,12 +14,13 @@ const LOCALE_OPTIONS = [
   { code: 'en', label: 'EN' },
 ] as const;
 
-const NAV_KEYS = ['home', 'menu', 'about', 'gallery', 'contact'] as const;
+const NAV_KEYS = ['home', 'menu', 'about', 'gallery', 'blog', 'contact'] as const;
 const NAV_HREFS: Record<string, string> = {
   home:    '/',
   menu:    '#menu',
   about:   '#about',
   gallery: '#gallery',
+  blog:    '/blog',
   contact: '#contact',
 };
 
