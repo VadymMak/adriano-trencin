@@ -8,6 +8,9 @@ import Header from '@/components/layout/Header/Header';
 import Footer from '@/components/layout/Footer/Footer';
 import '../../styles/globals.css';
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://adriano-trencin.vercel.app';
+const LOCALES  = routing.locales;
+
 const geist = Geist({
   variable: '--font-geist',
   subsets: ['latin'],
@@ -21,9 +24,33 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
 
+  const canonicalUrl = `${BASE_URL}/${locale}`;
+
   return {
     title: t('title'),
     description: t('description'),
+    metadataBase: new URL(BASE_URL),
+    alternates: {
+      canonical: canonicalUrl,
+      languages: Object.fromEntries(
+        LOCALES.map((l) => [l, `${BASE_URL}/${l}`])
+      ),
+    },
+    openGraph: {
+      type: 'website',
+      url: canonicalUrl,
+      title: t('title'),
+      description: t('description'),
+      siteName: 'Adriano Restaurant & Cafe',
+      images: [{ url: '/images/og-image.jpg', width: 1200, height: 630 }],
+      locale,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('title'),
+      description: t('description'),
+      images: ['/images/og-image.jpg'],
+    },
   };
 }
 
