@@ -1,0 +1,266 @@
+.section {
+  background-color: var(--color-bg-secondary);
+  padding: 100px 0;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--color-text-primary);
+  margin-bottom: 48px;
+  letter-spacing: 0.04em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* ─── Form ─── */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+  padding: 12px 16px;
+  transition: border-color var(--transition);
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--color-text-faint);
+}
+
+.field select option {
+  background: #1a1a1a;
+  color: var(--color-text-primary);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--color-gold);
+}
+
+.fieldError input,
+.fieldError select,
+.fieldError textarea {
+  border-color: #e05555;
+}
+
+.fieldError label {
+  color: #e05555;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.submitBtn {
+  flex: 1;
+  padding: 14px 24px;
+  background: var(--color-gold);
+  color: #0a0a0a;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--transition), opacity var(--transition);
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: var(--color-gold-hover);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.whatsappBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  background: var(--color-whatsapp);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity var(--transition);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.whatsappBtn:hover {
+  opacity: 0.88;
+}
+
+.confirm {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.deposit {
+  font-size: 0.8rem;
+  color: var(--color-gold);
+  opacity: 0.8;
+}
+
+/* ─── Success ─── */
+
+.success {
+  padding: 32px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.successTitle {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-gold);
+  margin-bottom: 12px;
+}
+
+.successText {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+/* ─── Info column ─── */
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 8px;
+}
+
+.infoBlock h3 {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 12px;
+}
+
+.infoBlock p,
+.infoBlock a {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  text-decoration: none;
+}
+
+.infoBlock a:hover {
+  color: var(--color-gold);
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .info {
+    order: -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .infoBlock {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .divider {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .whatsappBtn {
+    justify-content: center;
+  }
+}
