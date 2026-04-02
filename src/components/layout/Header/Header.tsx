@@ -83,11 +83,11 @@ export default function Header() {
 
     const show = () => {
       el.style.transform = 'translateY(0)';
-      document.documentElement.style.setProperty('--sticky-offset', `${el.offsetHeight}px`);
+      document.documentElement.style.setProperty('--header-offset', `${el.offsetHeight}px`);
     };
     const hide = () => {
       el.style.transform = 'translateY(-100%)';
-      document.documentElement.style.setProperty('--sticky-offset', '0px');
+      document.documentElement.style.setProperty('--header-offset', '0px');
     };
 
     const onScroll = () => {
