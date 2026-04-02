@@ -17,13 +17,19 @@ export default function MenuPage() {
   const scrollToCategory = (categoryId: string) => {
     const element = document.getElementById(categoryId);
     if (!element) return;
-    const headerOffset = parseInt(
-      getComputedStyle(document.documentElement).getPropertyValue('--header-offset') || '64'
-    );
-    const filterHeight = 48;
-    const offset = headerOffset + filterHeight + 16;
+
+    const header = document.querySelector('header');
+    const filterBar = document.querySelector('[data-filter-bar]');
+
+    const headerRect = header?.getBoundingClientRect();
+    const filterHeight = filterBar?.getBoundingClientRect().height ?? 0;
+    const headerHeight = headerRect?.height ?? 0;
+    const headerVisible = headerRect ? headerRect.top >= -1 : false;
+
+    const totalOffset = (headerVisible ? headerHeight : 0) + filterHeight + 16;
     const elementTop = element.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top: elementTop - offset, behavior: 'smooth' });
+
+    window.scrollTo({ top: elementTop - totalOffset, behavior: 'smooth' });
   };
 
   function handleFilter(id: string) {
@@ -38,7 +44,7 @@ export default function MenuPage() {
   return (
     <>
       {/* Sticky filter bar */}
-      <div className={styles.filterBar}>
+      <div data-filter-bar className={styles.filterBar}>
         <div className={styles.filterInner}>
           {FILTER_IDS.map((id) => (
             <button
