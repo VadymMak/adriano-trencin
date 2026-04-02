@@ -12,9 +12,15 @@ export default function MenuPage() {
   const t = useTranslations('menu');
   const [active, setActive] = useState<string>(ALL);
 
-  function scrollTo(id: string) {
+  const HEADER_HEIGHT = 64;   // px — sticky main header
+  const FILTER_HEIGHT = 48;   // px — sticky filter bar
+  const OFFSET = HEADER_HEIGHT + FILTER_HEIGHT + 16; // 16px breathing room
+
+  function scrollToSection(id: string) {
     const el = document.getElementById(`section-${id}`);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - OFFSET;
+    window.scrollTo({ top, behavior: 'smooth' });
   }
 
   function handleFilter(id: string) {
@@ -22,7 +28,7 @@ export default function MenuPage() {
     if (id === ALL) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      scrollTo(id);
+      scrollToSection(id);
     }
   }
 

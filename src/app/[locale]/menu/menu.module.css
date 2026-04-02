@@ -98,7 +98,7 @@
 
 .section {
   margin-bottom: 72px;
-  scroll-margin-top: 116px;
+  scroll-margin-top: 0;
 }
 
 .sectionHeader {
