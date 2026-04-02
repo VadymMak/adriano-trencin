@@ -17,10 +17,8 @@ const LOCALE_OPTIONS = [
 const NAV_KEYS = ['home', 'menu', 'about', 'gallery', 'blog', 'contact'] as const;
 const NAV_HREFS: Record<string, string> = {
   home:    '/',
-  menu:    '#menu',
   about:   '#about',
   gallery: '#gallery',
-  blog:    '/blog',
   contact: '#contact',
 };
 
@@ -64,6 +62,12 @@ export default function Header() {
   const lastScrollY               = useRef(0);
   const t                         = useTranslations('nav');
   const currentLocale             = useLocale();
+
+  function getHref(key: string): string {
+    if (key === 'menu') return `/${currentLocale}/menu`;
+    if (key === 'blog') return `/${currentLocale}/blog`;
+    return NAV_HREFS[key] ?? '/';
+  }
   const router                    = useRouter();
   const pathname                  = usePathname();
 
@@ -109,7 +113,7 @@ export default function Header() {
         {/* Desktop nav */}
         <nav className={styles.nav}>
           {NAV_KEYS.map((key) => (
-            <a key={key} href={NAV_HREFS[key]} className={styles.navLink}>
+            <a key={key} href={getHref(key)} className={styles.navLink}>
               {t(key)}
             </a>
           ))}
@@ -166,7 +170,7 @@ export default function Header() {
             {NAV_KEYS.map((key) => (
               <a
                 key={key}
-                href={NAV_HREFS[key]}
+                href={getHref(key)}
                 className={styles.mobileNavLink}
                 onClick={() => setMenuOpen(false)}
               >

@@ -92,6 +92,25 @@
       "fuzi":          { "name": "Fuži s čiernou hľuzovkou",   "desc": "Istrské fuži, čierna hľuzovka, smotana" }
     }
   },
+  "menu": {
+    "label": "Jedálny lístok",
+    "title": "Menu",
+    "allergensTitle": "Alergény",
+    "allergensList": "1 – Lepok · 2 – Kôrovce · 3 – Vajcia · 4 – Ryby · 7 – Mlieko · 8 – Orechy · 14 – Mäkkýše",
+    "categories": {
+      "all":         "Všetko",
+      "predjedla":   "Predjedlá",
+      "cestoviny":   "Cestoviny",
+      "pizza":       "Pizza",
+      "ryby":        "Ryby & morské plody",
+      "jedla-vopred":"Na objednávku",
+      "maso":        "Mäso",
+      "prilohy":     "Prílohy",
+      "salaty":      "Šaláty",
+      "dezerty":     "Dezerty",
+      "napoje":      "Nápoje"
+    }
+  },
   "cta": {
     "title": "Rezervujte si stôl ešte dnes",
     "subtitle": "Potvrdenie do 2 hodín · WhatsApp & Email",

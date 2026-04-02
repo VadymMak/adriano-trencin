@@ -92,6 +92,25 @@
       "fuzi":          { "name": "Fuži s černým lanýžem",        "desc": "Istrské fuži, černý lanýž, smetana" }
     }
   },
+  "menu": {
+    "label": "Jídelní lístek",
+    "title": "Menu",
+    "allergensTitle": "Alergeny",
+    "allergensList": "1 – Lepek · 2 – Korýši · 3 – Vejce · 4 – Ryby · 7 – Mléko · 8 – Ořechy · 14 – Měkkýši",
+    "categories": {
+      "all":         "Vše",
+      "predjedla":   "Předkrmy",
+      "cestoviny":   "Těstoviny",
+      "pizza":       "Pizza",
+      "ryby":        "Ryby & mořské plody",
+      "jedla-vopred":"Na objednání",
+      "maso":        "Maso",
+      "prilohy":     "Přílohy",
+      "salaty":      "Saláty",
+      "dezerty":     "Dezerty",
+      "napoje":      "Nápoje"
+    }
+  },
   "cta": {
     "title": "Rezervujte si stůl ještě dnes",
     "subtitle": "Potvrzení do 2 hodin · WhatsApp & Email",

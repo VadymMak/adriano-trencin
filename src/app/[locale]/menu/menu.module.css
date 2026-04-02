@@ -1,0 +1,170 @@
+/* ─── Filter bar ─── */
+
+.filterBar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.filterInner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.filterInner::-webkit-scrollbar {
+  display: none;
+}
+
+.filterBtn {
+  flex-shrink: 0;
+  padding: 14px 18px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+}
+
+.filterBtn:hover {
+  color: var(--color-text-secondary);
+}
+
+.filterBtnActive {
+  color: var(--color-gold);
+  border-bottom-color: var(--color-gold);
+}
+
+/* ─── Main ─── */
+
+.main {
+  background-color: var(--color-bg-primary);
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Page header ─── */
+
+.pageHeader {
+  text-align: center;
+  padding: 80px 0 60px;
+}
+
+.pageLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ocean-label);
+  margin-bottom: 12px;
+}
+
+.pageTitle {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--color-gold);
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
+}
+
+.pageDivider {
+  width: 40px;
+  height: 1px;
+  background: var(--color-gold);
+  margin: 0 auto;
+}
+
+/* ─── Section ─── */
+
+.section {
+  margin-bottom: 72px;
+  scroll-margin-top: 60px;
+}
+
+.sectionHeader {
+  margin-bottom: 28px;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--color-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.sectionDivider {
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* ─── Grid ─── */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* ─── Allergens ─── */
+
+.allergens {
+  border-top: 0.5px solid var(--color-border);
+  padding: 32px 0 16px;
+  margin-top: 24px;
+}
+
+.allergensTitle {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.allergensList {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

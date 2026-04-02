@@ -92,6 +92,25 @@
       "fuzi":          { "name": "Fuži mit schwarzem Trüffel",    "desc": "Istrische Fuži, schwarzer Trüffel, Sahne" }
     }
   },
+  "menu": {
+    "label": "Speisekarte",
+    "title": "Menu",
+    "allergensTitle": "Allergene",
+    "allergensList": "1 – Gluten · 2 – Krebstiere · 3 – Eier · 4 – Fisch · 7 – Milch · 8 – Nüsse · 14 – Weichtiere",
+    "categories": {
+      "all":         "Alles",
+      "predjedla":   "Vorspeisen",
+      "cestoviny":   "Nudeln",
+      "pizza":       "Pizza",
+      "ryby":        "Fisch & Meeresfrüchte",
+      "jedla-vopred":"Auf Bestellung",
+      "maso":        "Fleisch",
+      "prilohy":     "Beilagen",
+      "salaty":      "Salate",
+      "dezerty":     "Desserts",
+      "napoje":      "Getränke"
+    }
+  },
   "cta": {
     "title": "Reservieren Sie noch heute",
     "subtitle": "Bestätigung innerhalb von 2 Stunden · WhatsApp & E-Mail",

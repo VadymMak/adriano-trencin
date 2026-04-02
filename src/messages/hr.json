@@ -92,6 +92,25 @@
       "fuzi":          { "name": "Fuži s crnim tartufom",          "desc": "Istarski fuži, crni tartuf, vrhnje" }
     }
   },
+  "menu": {
+    "label": "Jelovnik",
+    "title": "Menu",
+    "allergensTitle": "Alergeni",
+    "allergensList": "1 – Gluten · 2 – Rakovi · 3 – Jaja · 4 – Riba · 7 – Mlijeko · 8 – Orašasti plodovi · 14 – Mekušci",
+    "categories": {
+      "all":         "Sve",
+      "predjedla":   "Predjela",
+      "cestoviny":   "Tjestenine",
+      "pizza":       "Pizza",
+      "ryby":        "Riba & plodovi mora",
+      "jedla-vopred":"Na narudžbu",
+      "maso":        "Meso",
+      "prilohy":     "Prilozi",
+      "salaty":      "Salate",
+      "dezerty":     "Deserti",
+      "napoje":      "Napici"
+    }
+  },
   "cta": {
     "title": "Rezervirajte stol već danas",
     "subtitle": "Potvrda u roku 2 sata · WhatsApp & Email",
