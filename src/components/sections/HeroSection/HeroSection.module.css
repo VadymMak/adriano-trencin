@@ -1,0 +1,214 @@
+/*
+  Чтобы добавить фоновое фото, установи в globals.css:
+  :root { --hero-bg-image: url('/images/hero.jpg'); }
+  Overlay rgba(0,0,0,0.65) применяется автоматически поверх фото.
+  Без фото — фон остаётся чистым #0a0a0a.
+*/
+:root {
+  --hero-bg-image: none;
+}
+
+.hero {
+  position: relative;
+  background-color: #0a0a0a;
+  background-image: var(--hero-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 56px 24px 48px;
+  text-align: center;
+  border-bottom: 1px solid #c9a347;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlay поверх фонового изображения */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Badge */
+.badge {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #c9a347;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Logo */
+.logo {
+  font-size: clamp(32px, 8vw, 52px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: clamp(6px, 2vw, 12px);
+  text-transform: uppercase;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 16px);
+  margin-bottom: 10px;
+}
+
+.dash {
+  color: #c9a347;
+  font-weight: 300;
+  letter-spacing: 0;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 14px;
+  color: #4a7fa5;
+  letter-spacing: 2px;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* Divider */
+.divider {
+  width: 60px;
+  height: 1px;
+  background: #c9a347;
+  margin: 22px auto;
+  flex-shrink: 0;
+}
+
+/* Tagline */
+.tagline {
+  font-size: 13px;
+  color: #666;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  padding: 0 16px;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnGold {
+  background: #c9a347;
+  color: #0a0a0a;
+  border: none;
+  padding: 13px 28px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s ease, transform 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btnGold:hover {
+  background: #e0b85a;
+}
+
+.btnGold:active {
+  transform: scale(0.97);
+}
+
+.btnOutline {
+  background: transparent;
+  color: #c9a347;
+  border: 1px solid #c9a347;
+  padding: 13px 28px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btnOutline:hover {
+  background: #c9a347;
+  color: #0a0a0a;
+}
+
+.btnOutline:active {
+  transform: scale(0.97);
+}
+
+/* WhatsApp fixed button */
+.whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  background: #25d366;
+  color: #fff;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.whatsapp:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp:active {
+  transform: scale(0.95);
+}
+
+.whatsappIcon {
+  width: 26px;
+  height: 26px;
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .hero {
+    padding: 72px 48px 64px;
+  }
+
+  .tagline {
+    font-size: 14px;
+  }
+
+  .buttons {
+    flex-wrap: nowrap;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .hero {
+    padding: 96px 64px 80px;
+  }
+
+  .badge {
+    font-size: 12px;
+  }
+}
