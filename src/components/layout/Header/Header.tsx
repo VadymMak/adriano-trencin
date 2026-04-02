@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -56,11 +56,11 @@ function ChevronIcon() {
 }
 
 export default function Header() {
-  const [menuOpen, setMenuOpen]     = useState(false);
-  const [langOpen, setLangOpen]     = useState(false);
-  const [visible, setVisible]       = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const t                           = useTranslations('nav');
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const [hidden, setHidden]     = useState(false);
+  const lastScrollY             = useRef(0);
+  const t                       = useTranslations('nav');
   const currentLocale             = useLocale();
 
   function getHref(key: string): string {
@@ -71,22 +71,18 @@ export default function Header() {
   const router                    = useRouter();
   const pathname                  = usePathname();
 
-  // Smart scroll: hide on down, show on up, always show at top
+  // Vendly pattern: useRef for lastScrollY — no re-render on every scroll tick
   useEffect(() => {
+    const THRESHOLD = 10;
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY < 10) {
-        setVisible(true);
-      } else if (currentScrollY < lastScrollY) {
-        setVisible(true);
-      } else if (currentScrollY > lastScrollY + 5) {
-        setVisible(false);
-      }
-      setLastScrollY(currentScrollY);
+      const currentY = window.scrollY;
+      if (Math.abs(currentY - lastScrollY.current) < THRESHOLD) return;
+      setHidden(currentY > lastScrollY.current && currentY > 80);
+      lastScrollY.current = currentY;
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   // Close dropdowns on outside click
   useEffect(() => {
@@ -104,7 +100,7 @@ export default function Header() {
   }, [pathname, router]);
 
   return (
-    <header className={`${styles.header} ${!visible ? styles.headerHidden : ''}`}>
+    <header className={`${styles.header} ${hidden ? styles.headerHidden : ''}`}>
       <div className={styles.inner}>
 
         {/* Logo */}

@@ -1,10 +1,8 @@
 /* ─── Header ───────────────────────────────────────────────────────────────── */
 
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 1000;
   background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(12px);
