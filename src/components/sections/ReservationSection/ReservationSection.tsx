@@ -16,13 +16,8 @@ interface FormData {
 
 const REQUIRED: (keyof FormData)[] = ['name', 'phone', 'email', 'date', 'time', 'guests'];
 
-// guest index → count: 0=1, 1=2, ..., 8=9, 9=10+
-function depositLevel(guestIndex: number): 'none' | 'small' | 'large' {
-  if (guestIndex < 0) return 'none';
-  if (guestIndex <= 1) return 'none';    // 1–2 guests
-  if (guestIndex <= 4) return 'small';   // 3–5 guests
-  return 'large';                        // 6+ guests
-}
+// numeric guest counts matching guestOptions indices: index 0=1 guest, ..., index 8=9 guests, index 9=10+
+const GUEST_COUNTS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
 
 const EMPTY: FormData = { name: '', phone: '', email: '', date: '', time: '', guests: '', message: '' };
 
@@ -30,13 +25,12 @@ export default function ReservationSection() {
   const t = useTranslations('reservation');
 
   const [form, setForm] = useState<FormData>(EMPTY);
-  const [guestIndex, setGuestIndex] = useState(-1);
+  const [guests, setGuests] = useState(0);
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, boolean>>>({});
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [whatsappUrl, setWhatsappUrl] = useState('');
 
-  const GUEST_INDICES = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as const;
   const HOURS_INDICES = [0, 1, 2] as const;
 
   function validate(): boolean {
@@ -163,25 +157,33 @@ export default function ReservationSection() {
                 <div className={errors.guests ? `${styles.field} ${styles.fieldError}` : styles.field}>
                   <label>{t('fields.guests')}</label>
                   <select
-                    value={form.guests}
+                    value={guests === 0 ? '' : guests}
                     onChange={e => {
-                      const idx = GUEST_INDICES.findIndex(i => t(`guestOptions.${i}`) === e.target.value);
-                      setGuestIndex(idx);
-                      change('guests', e.target.value);
+                      const count = Number(e.target.value);
+                      setGuests(count);
+                      change('guests', t(`guestOptions.${count - 1}`));
                     }}
                   >
                     <option value="" disabled>{t('fields.guestsPlaceholder')}</option>
-                    {GUEST_INDICES.map((i) => (
-                      <option key={i} value={t(`guestOptions.${i}`)}>{t(`guestOptions.${i}`)}</option>
+                    {GUEST_COUNTS.map((count, i) => (
+                      <option key={count} value={count}>{t(`guestOptions.${i}`)}</option>
                     ))}
                   </select>
                 </div>
 
-                {guestIndex >= 0 && (
-                  <div className={`${styles.depositHint} ${depositLevel(guestIndex) === 'none' ? styles.depositHintNone : styles.depositHintPaid}`}>
-                    {depositLevel(guestIndex) === 'none' && t('depositNone')}
-                    {depositLevel(guestIndex) === 'small' && t('depositSmall')}
-                    {depositLevel(guestIndex) === 'large' && t('depositLarge')}
+                {guests > 0 && guests <= 2 && (
+                  <div className={`${styles.depositHint} ${styles.depositHintNone}`}>
+                    {t('depositNone')}
+                  </div>
+                )}
+                {guests >= 3 && guests <= 5 && (
+                  <div className={`${styles.depositHint} ${styles.depositHintPaid}`}>
+                    {t('depositSmall')}
+                  </div>
+                )}
+                {guests >= 6 && (
+                  <div className={`${styles.depositHint} ${styles.depositHintPaid}`}>
+                    {t('depositLarge')}
                   </div>
                 )}
 
