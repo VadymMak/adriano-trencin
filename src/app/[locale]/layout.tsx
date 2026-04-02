@@ -4,6 +4,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
+import Header from '@/components/layout/Header/Header';
 import '../../styles/globals.css';
 
 const geist = Geist({
@@ -48,6 +49,7 @@ export default async function LocaleLayout({
     <html lang={locale} className={geist.variable}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <Header />
           {children}
         </NextIntlClientProvider>
       </body>

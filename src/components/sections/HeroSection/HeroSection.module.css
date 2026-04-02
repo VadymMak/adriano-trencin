@@ -186,6 +186,26 @@
   background: rgba(201, 163, 71, 0.08);
 }
 
+/* Progress dots (autoplay indicator) */
+.dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.dot {
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(201, 163, 71, 0.25);
+  transition: width 0.3s ease, background 0.3s ease;
+  width: 6px;
+}
+
+.dotActive {
+  width: 24px;
+  background: #c9a347;
+}
+
 /* Карточки — анимация при смене key */
 .cards {
   display: flex;

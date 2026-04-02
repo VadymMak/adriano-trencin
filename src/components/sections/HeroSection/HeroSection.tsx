@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import styles from './HeroSection.module.css';
 
@@ -16,16 +16,16 @@ const MENU: Record<Category, { name: string; price: string }[]> = {
     { name: 'Carpaccio',          price: '14,50€' },
   ],
   Cestoviny: [
-    { name: 'Bavette Fruti di Mare',       price: '14,90€' },
-    { name: 'Bavette ADRIANO',             price: '15,50€' },
-    { name: 'Fuži s čiernou hľuzovkou',    price: '18,90€' },
-    { name: 'Sépiové linguine',            price: '15,50€' },
+    { name: 'Bavette Fruti di Mare',    price: '14,90€' },
+    { name: 'Bavette ADRIANO',          price: '15,50€' },
+    { name: 'Fuži s čiernou hľuzovkou', price: '18,90€' },
+    { name: 'Sépiové linguine',         price: '15,50€' },
   ],
   Pizza: [
-    { name: 'Adriano',             price: '12,00€' },
-    { name: 'Mortadella burrata',  price: '15,00€' },
-    { name: 'Tartuffi',            price: '14,00€' },
-    { name: 'Diavola',             price: '11,00€' },
+    { name: 'Adriano',            price: '12,00€' },
+    { name: 'Mortadella burrata', price: '15,00€' },
+    { name: 'Tartuffi',           price: '14,00€' },
+    { name: 'Diavola',            price: '11,00€' },
   ],
   Ryby: [
     { name: 'Steak z tuniaka',    price: '22,00€' },
@@ -40,16 +40,41 @@ const MENU: Record<Category, { name: string; price: string }[]> = {
     { name: 'Beefsteak na grile',    price: '23,50€' },
   ],
   Nápoje: [
-    { name: 'Aperol Spritz',       price: '5,00€' },
-    { name: 'Gin Tonic',           price: '6,00€' },
-    { name: 'Istarska Malvazia',   price: '25,00€' },
-    { name: 'Rosse',               price: '25,00€' },
+    { name: 'Aperol Spritz',     price: '5,00€' },
+    { name: 'Gin Tonic',         price: '6,00€' },
+    { name: 'Istarska Malvazia', price: '25,00€' },
+    { name: 'Rosse',             price: '25,00€' },
   ],
 };
 
+const AUTO_ROTATE_INTERVAL = 4000;
+
 export default function HeroSection() {
   const t = useTranslations('hero');
-  const [active, setActive] = useState<Category>('Predjedlá');
+  const [active, setActive]           = useState<Category>('Predjedlá');
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  // Auto-rotate through categories (vendshop approach)
+  const rotateNext = useCallback(() => {
+    setActive((current) => {
+      const idx = CATEGORIES.indexOf(current);
+      return CATEGORIES[(idx + 1) % CATEGORIES.length];
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    const timer = setInterval(rotateNext, AUTO_ROTATE_INTERVAL);
+    return () => clearInterval(timer);
+  }, [isAutoPlaying, rotateNext]);
+
+  // On manual click: pause autoplay, resume after 12s
+  const handleCatClick = useCallback((cat: Category) => {
+    setActive(cat);
+    setIsAutoPlaying(false);
+    const resume = setTimeout(() => setIsAutoPlaying(true), 12000);
+    return () => clearTimeout(resume);
+  }, []);
 
   return (
     <>
@@ -83,20 +108,33 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Правая колонка — переключатель категорий */}
+        {/* Правая колонка */}
         <div className={styles.right}>
+
           {/* Категории */}
           <div className={styles.cats}>
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 className={`${styles.catPill} ${active === cat ? styles.catPillActive : ''}`}
-                onClick={() => setActive(cat)}
+                onClick={() => handleCatClick(cat)}
               >
                 {cat}
               </button>
             ))}
           </div>
+
+          {/* Progress dots — показываются только при autoplay (как в vendshop) */}
+          {isAutoPlaying && (
+            <div className={styles.dots}>
+              {CATEGORIES.map((cat) => (
+                <div
+                  key={cat}
+                  className={`${styles.dot} ${active === cat ? styles.dotActive : ''}`}
+                />
+              ))}
+            </div>
+          )}
 
           {/* Карточки — key вызывает re-mount и CSS-анимацию */}
           <div key={active} className={styles.cards}>
