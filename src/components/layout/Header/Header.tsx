@@ -77,17 +77,22 @@ export default function Header() {
     const handleScroll = () => {
       const currentY = window.scrollY;
       if (Math.abs(currentY - lastScrollY.current) < THRESHOLD) return;
-      const isHidden = currentY > lastScrollY.current && currentY > 80;
-      setHidden(isHidden);
-      document.documentElement.style.setProperty(
-        '--header-offset',
-        isHidden ? '0px' : '64px'
-      );
+      setHidden(currentY > lastScrollY.current && currentY > 80);
       lastScrollY.current = currentY;
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Keep --sticky-offset CSS var in sync with header visibility
+  useEffect(() => {
+    const headerEl = document.querySelector('header');
+    const h = headerEl?.offsetHeight ?? 64;
+    document.documentElement.style.setProperty(
+      '--sticky-offset',
+      hidden ? '0px' : `${h}px`
+    );
+  }, [hidden]);
 
   // Close dropdowns on outside click
   useEffect(() => {

@@ -44,8 +44,10 @@
   --border-radius:    4px;
   --border-radius-md: 8px;
   --transition:    0.25s ease;
-  --header-height: 64px;
-  --header-offset: 64px;
+  --header-height:     64px;
+  --sticky-offset:     64px;
+  --filter-bar-height: 48px;
+  --scroll-offset:     calc(var(--sticky-offset) + var(--filter-bar-height) + 8px);
 }
 
 *,

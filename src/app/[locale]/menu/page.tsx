@@ -15,21 +15,9 @@ export default function MenuPage() {
   const FILTER_IDS = [ALL, ...FILTER_CATEGORIES];
 
   const scrollToCategory = (categoryId: string) => {
-    const element = document.getElementById(categoryId);
-    if (!element) return;
-
-    const header = document.querySelector('header');
-    const filterBar = document.querySelector('[data-filter-bar]');
-
-    const headerRect = header?.getBoundingClientRect();
-    const filterHeight = filterBar?.getBoundingClientRect().height ?? 0;
-    const headerHeight = headerRect?.height ?? 0;
-    const headerVisible = headerRect ? headerRect.top >= -1 : false;
-
-    const totalOffset = (headerVisible ? headerHeight : 0) + filterHeight + 16;
-    const elementTop = element.getBoundingClientRect().top + window.scrollY;
-
-    window.scrollTo({ top: elementTop - totalOffset, behavior: 'smooth' });
+    const el = document.getElementById(categoryId);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   function handleFilter(id: string) {
