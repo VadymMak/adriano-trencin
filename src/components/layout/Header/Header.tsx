@@ -1,10 +1,6 @@
 'use client';
 
-declare global {
-  interface Window { __programmaticScroll: boolean; }
-}
-
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -62,7 +58,6 @@ function ChevronIcon() {
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const headerRef               = useRef<HTMLElement>(null);
   const t                       = useTranslations('nav');
   const currentLocale           = useLocale();
   const router                  = useRouter();
@@ -74,41 +69,29 @@ export default function Header() {
     return NAV_HREFS[key] ?? '/';
   }
 
-  // Direct DOM manipulation — most reliable across desktop + mobile
   useEffect(() => {
-    const el = headerRef.current;
-    if (!el) return;
+    let lastScrollY = window.scrollY;
+    let rafId: number;
 
-    let lastY = window.scrollY;
-
-    const show = () => {
-      el.style.transform = 'translateY(0)';
-      document.documentElement.style.setProperty('--header-offset', `${el.offsetHeight}px`);
-    };
-    const hide = () => {
-      el.style.transform = 'translateY(-100%)';
-      document.documentElement.style.setProperty('--header-offset', '0px');
+    const updateHeader = () => {
+      const currentScrollY = window.scrollY;
+      const shouldHide = currentScrollY > lastScrollY && currentScrollY > 100;
+      document.documentElement.style.setProperty(
+        '--header-visible',
+        shouldHide ? '0' : '1'
+      );
+      lastScrollY = currentScrollY;
     };
 
     const onScroll = () => {
-      const y = window.scrollY;
-      if (y <= 0) {
-        show();
-      } else if (y < lastY) {
-        show();
-      } else if (y > lastY && !window.__programmaticScroll) {
-        hide();
-      }
-      lastY = y;
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(updateHeader);
     };
 
-    const onProgrammaticEnd = () => { lastY = window.scrollY; };
-
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('programmatic-scroll-end', onProgrammaticEnd);
     return () => {
       window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('programmatic-scroll-end', onProgrammaticEnd);
+      cancelAnimationFrame(rafId);
     };
   }, []);
 
@@ -128,7 +111,13 @@ export default function Header() {
   }, [pathname, router]);
 
   return (
-    <header ref={headerRef} className={styles.header}>
+    <header
+      className={styles.header}
+      style={{
+        transform: 'translateY(calc((1 - var(--header-visible, 1)) * -100%))',
+        transition: 'transform 0.3s ease',
+      }}
+    >
       <div className={styles.inner}>
 
         {/* Logo */}

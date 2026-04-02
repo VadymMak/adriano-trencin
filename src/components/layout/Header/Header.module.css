@@ -10,8 +10,6 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(201, 163, 71, 0.15);
-  transform: translateY(0);
-  transition: transform 0.3s ease;
 }
 
 .inner {

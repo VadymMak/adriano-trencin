@@ -1,14 +1,10 @@
 /* ─── Filter bar ─── */
 
 .filterBar {
-  position: sticky;
-  top: var(--header-offset);
-  z-index: 99;
   background: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 0.5px solid var(--color-border);
-  transition: top 0.3s ease;
 }
 
 .filterInner {
@@ -99,7 +95,6 @@
 
 .section {
   margin-bottom: 72px;
-  scroll-margin-top: var(--scroll-offset);
 }
 
 .sectionHeader {

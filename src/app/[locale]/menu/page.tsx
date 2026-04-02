@@ -21,12 +21,17 @@ export default function MenuPage() {
   const scrollToCategory = (categoryId: string) => {
     const el = document.getElementById(categoryId);
     if (!el) return;
+    const cs = getComputedStyle(document.documentElement);
+    const headerVisible = parseFloat(cs.getPropertyValue('--header-visible')) || 1;
+    const headerHeight  = parseInt(cs.getPropertyValue('--header-height'))    || 64;
+    const filterHeight  = parseInt(cs.getPropertyValue('--filter-height'))    || 48;
+    const offset = headerVisible * headerHeight + filterHeight + 16;
+    window.scrollTo({
+      top: el.getBoundingClientRect().top + window.scrollY - offset,
+      behavior: 'smooth',
+    });
     window.__programmaticScroll = true;
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setTimeout(() => {
-      window.__programmaticScroll = false;
-      window.dispatchEvent(new Event('programmatic-scroll-end'));
-    }, 1000);
+    setTimeout(() => { window.__programmaticScroll = false; }, 800);
   };
 
   function handleFilter(id: string) {
@@ -40,8 +45,18 @@ export default function MenuPage() {
 
   return (
     <>
-      {/* Sticky filter bar */}
-      <div data-filter-bar className={styles.filterBar}>
+      {/* Fixed filter bar */}
+      <div
+        className={styles.filterBar}
+        style={{
+          position: 'fixed',
+          top: 'calc(var(--header-visible, 1) * var(--header-height, 64px))',
+          left: 0,
+          right: 0,
+          zIndex: 99,
+          transition: 'top 0.3s ease',
+        }}
+      >
         <div className={styles.filterInner}>
           {FILTER_IDS.map((id) => (
             <button
@@ -56,7 +71,10 @@ export default function MenuPage() {
       </div>
 
       {/* Page content */}
-      <main className={styles.main}>
+      <main
+        className={styles.main}
+        style={{ paddingTop: 'calc(var(--header-height, 64px) + var(--filter-height, 48px))' }}
+      >
         <div className={styles.container}>
           <div className={styles.pageHeader}>
             <p className={styles.pageLabel}>{t('label')}</p>
