@@ -21,6 +21,33 @@
     "ctaReservation": "Rezervirajte stol",
     "ctaMenu": "Pogledajte jelovnik"
   },
+  "reservation": {
+    "label": "Rezervacija",
+    "title": "Rezervirajte stol",
+    "fields": {
+      "name": "Ime i prezime", "namePlaceholder": "Ivan Horvat",
+      "phone": "Telefon", "phonePlaceholder": "+385 9X XXX XXXX",
+      "email": "Email", "emailPlaceholder": "vas@email.hr",
+      "date": "Datum",
+      "time": "Vrijeme",
+      "guests": "Broj osoba",
+      "message": "Poruka / napomena", "messagePlaceholder": "Proslava rođendana, alergije..."
+    },
+    "submitBtn": "Rezerviraj",
+    "whatsappBtn": "WhatsApp",
+    "submitting": "Šaljem...",
+    "confirm": "Rezervaciju ćemo potvrditi unutar 2 sata putem WhatsAppa ili emaila",
+    "deposit": "Depozit 10€ za rezervacije za 4+ osobe",
+    "successTitle": "Rezervacija poslana!",
+    "successText": "Potvrdit ćemo je unutar 2 sata.",
+    "errorText": "Došlo je do greške. Molimo pokušajte ponovo.",
+    "hours": "Radno vrijeme",
+    "hoursRows": ["Ponedjeljak – Petak: 11:00 – 22:00", "Subota: 11:00 – 23:00", "Nedjelja: 12:00 – 21:00"],
+    "address": "Námestie sv. Anny 3, Trenčín",
+    "phone2": "0949 551 553",
+    "emailInfo": "adrianorestaurantcafe@gmail.com",
+    "guestOptions": ["1 osoba", "2 osobe", "3 osobe", "4 osobe", "5 osoba", "6 osoba", "7 osoba", "8 osoba", "9 osoba", "10+ osoba"]
+  },
   "about": {
     "label": "O nama",
     "title": "Okus mora u srcu Trenčína",

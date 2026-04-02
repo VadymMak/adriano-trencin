@@ -21,6 +21,33 @@
     "ctaReservation": "Rezervovat stůl",
     "ctaMenu": "Zobrazit menu"
   },
+  "reservation": {
+    "label": "Rezervace",
+    "title": "Rezervujte si stůl",
+    "fields": {
+      "name": "Jméno a příjmení", "namePlaceholder": "Jan Novák",
+      "phone": "Telefon", "phonePlaceholder": "+420 9XX XXX XXX",
+      "email": "Email", "emailPlaceholder": "vas@email.cz",
+      "date": "Datum",
+      "time": "Čas",
+      "guests": "Počet osob",
+      "message": "Zpráva / poznámka", "messagePlaceholder": "Narozeninová oslava, alergie..."
+    },
+    "submitBtn": "Rezervovat",
+    "whatsappBtn": "WhatsApp",
+    "submitting": "Odesílám...",
+    "confirm": "Rezervaci potvrdíme do 2 hodin přes WhatsApp nebo email",
+    "deposit": "Záloha 10€ při rezervaci pro 4+ osoby",
+    "successTitle": "Rezervace odeslána!",
+    "successText": "Potvrdíme ji do 2 hodin.",
+    "errorText": "Nastala chyba. Zkuste prosím znovu.",
+    "hours": "Otevírací hodiny",
+    "hoursRows": ["Pondělí – Pátek: 11:00 – 22:00", "Sobota: 11:00 – 23:00", "Neděle: 12:00 – 21:00"],
+    "address": "Námestie sv. Anny 3, Trenčín",
+    "phone2": "0949 551 553",
+    "emailInfo": "adrianorestaurantcafe@gmail.com",
+    "guestOptions": ["1 osoba", "2 osoby", "3 osoby", "4 osoby", "5 osob", "6 osob", "7 osob", "8 osob", "9 osob", "10+ osob"]
+  },
   "about": {
     "label": "O nás",
     "title": "Chuť moře v srdci Trenčína",

@@ -21,6 +21,33 @@
     "ctaReservation": "Tisch reservieren",
     "ctaMenu": "Speisekarte ansehen"
   },
+  "reservation": {
+    "label": "Reservierung",
+    "title": "Tisch reservieren",
+    "fields": {
+      "name": "Vor- und Nachname", "namePlaceholder": "Max Mustermann",
+      "phone": "Telefon", "phonePlaceholder": "+49 XXX XXXXXXX",
+      "email": "E-Mail", "emailPlaceholder": "ihre@email.de",
+      "date": "Datum",
+      "time": "Uhrzeit",
+      "guests": "Personenanzahl",
+      "message": "Nachricht / Anmerkung", "messagePlaceholder": "Geburtstagsfeier, Allergien..."
+    },
+    "submitBtn": "Reservieren",
+    "whatsappBtn": "WhatsApp",
+    "submitting": "Sende...",
+    "confirm": "Wir bestätigen Ihre Reservierung innerhalb von 2 Stunden per WhatsApp oder E-Mail",
+    "deposit": "Anzahlung 10€ bei Reservierung für 4+ Personen",
+    "successTitle": "Reservierung gesendet!",
+    "successText": "Wir bestätigen sie innerhalb von 2 Stunden.",
+    "errorText": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    "hours": "Öffnungszeiten",
+    "hoursRows": ["Montag – Freitag: 11:00 – 22:00", "Samstag: 11:00 – 23:00", "Sonntag: 12:00 – 21:00"],
+    "address": "Námestie sv. Anny 3, Trenčín",
+    "phone2": "0949 551 553",
+    "emailInfo": "adrianorestaurantcafe@gmail.com",
+    "guestOptions": ["1 Person", "2 Personen", "3 Personen", "4 Personen", "5 Personen", "6 Personen", "7 Personen", "8 Personen", "9 Personen", "10+ Personen"]
+  },
   "about": {
     "label": "Über uns",
     "title": "Meeresgeschmack im Herzen von Trenčín",
