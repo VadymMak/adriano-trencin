@@ -16,12 +16,21 @@ interface FormData {
 
 const REQUIRED: (keyof FormData)[] = ['name', 'phone', 'email', 'date', 'time', 'guests'];
 
+// guest index → count: 0=1, 1=2, ..., 8=9, 9=10+
+function depositLevel(guestIndex: number): 'none' | 'small' | 'large' {
+  if (guestIndex < 0) return 'none';
+  if (guestIndex <= 1) return 'none';    // 1–2 guests
+  if (guestIndex <= 4) return 'small';   // 3–5 guests
+  return 'large';                        // 6+ guests
+}
+
 const EMPTY: FormData = { name: '', phone: '', email: '', date: '', time: '', guests: '', message: '' };
 
 export default function ReservationSection() {
   const t = useTranslations('reservation');
 
   const [form, setForm] = useState<FormData>(EMPTY);
+  const [guestIndex, setGuestIndex] = useState(-1);
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, boolean>>>({});
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -153,13 +162,28 @@ export default function ReservationSection() {
 
                 <div className={errors.guests ? `${styles.field} ${styles.fieldError}` : styles.field}>
                   <label>{t('fields.guests')}</label>
-                  <select value={form.guests} onChange={e => change('guests', e.target.value)}>
+                  <select
+                    value={form.guests}
+                    onChange={e => {
+                      const idx = GUEST_INDICES.findIndex(i => t(`guestOptions.${i}`) === e.target.value);
+                      setGuestIndex(idx);
+                      change('guests', e.target.value);
+                    }}
+                  >
                     <option value="" disabled>{t('fields.guestsPlaceholder')}</option>
                     {GUEST_INDICES.map((i) => (
                       <option key={i} value={t(`guestOptions.${i}`)}>{t(`guestOptions.${i}`)}</option>
                     ))}
                   </select>
                 </div>
+
+                {guestIndex >= 0 && (
+                  <div className={`${styles.depositHint} ${depositLevel(guestIndex) === 'none' ? styles.depositHintNone : styles.depositHintPaid}`}>
+                    {depositLevel(guestIndex) === 'none' && t('depositNone')}
+                    {depositLevel(guestIndex) === 'small' && t('depositSmall')}
+                    {depositLevel(guestIndex) === 'large' && t('depositLarge')}
+                  </div>
+                )}
 
                 <div className={styles.field}>
                   <label>{t('fields.message')}</label>
@@ -185,7 +209,12 @@ export default function ReservationSection() {
                 </div>
 
                 <p className={styles.confirm}>{t('confirm')}</p>
-                <p className={styles.deposit}>{t('deposit')}</p>
+
+                <div className={styles.cancelPolicy}>
+                  <p>{t('cancel24h')}</p>
+                  <p>{t('cancel12h')}</p>
+                  <p>{t('cancelNoShow')}</p>
+                </div>
               </form>
             )}
           </div>
@@ -210,6 +239,21 @@ export default function ReservationSection() {
               <p>
                 <a href={`mailto:${t('emailInfo')}`}>{t('emailInfo')}</a>
               </p>
+            </div>
+
+            <div className={styles.divider} />
+
+            <div className={styles.groupBlock}>
+              <h3>{t('groupTitle')}</h3>
+              <p>{t('groupText')}</p>
+              <a
+                href="https://wa.me/421949551553"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.groupWhatsappBtn}
+              >
+                {t('groupBtn')}
+              </a>
             </div>
           </div>
         </div>
