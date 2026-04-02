@@ -51,7 +51,9 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
-          {children}
+          <div style={{ paddingTop: '64px' }}>
+            {children}
+          </div>
           <Footer />
         </NextIntlClientProvider>
       </body>
