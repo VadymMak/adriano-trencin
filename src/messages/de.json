@@ -21,6 +21,22 @@
     "ctaReservation": "Tisch reservieren",
     "ctaMenu": "Speisekarte ansehen"
   },
+  "featured": {
+    "label": "Empfehlung",
+    "title": "Unsere Spezialitäten",
+    "subtitle": "Lieblingsgerichte unserer Gäste",
+    "order": "Bestellen",
+    "dishes": {
+      "chobotnica":    { "name": "Gegrillter Oktopus",           "desc": "Gegrillter Oktopus mit Zitrone und Olivenöl" },
+      "bavette-fruti": { "name": "Bavette Fruti di Mare",         "desc": "Frische Meeresfrüchte, Knoblauch, Kirschtomaten" },
+      "homar":         { "name": "Hummer mit Beilage",            "desc": "Frischer Hummer auf Butter gegrillt" },
+      "tuna":          { "name": "Thunfischsteak",                "desc": "Thunfisch vom Grill mit Gemüse" },
+      "paella":        { "name": "Meeresfrüchte-Paella",          "desc": "Garnelen, Sepia, Muscheln, Oktopus" },
+      "bavette-adriano": { "name": "Bavette ADRIANO",             "desc": "Garnelen und Pistazien-Pesto" },
+      "pizza-adriano": { "name": "Pizza Adriano",                 "desc": "Rucola, Garnelen, Tomatensauce" },
+      "fuzi":          { "name": "Fuži mit schwarzem Trüffel",    "desc": "Istrische Fuži, schwarzer Trüffel, Sahne" }
+    }
+  },
   "meta": {
     "title": "Adriano – Restaurant & Cafe Trenčín",
     "description": "Mittelmeerküche, Meeresfrüchte und Weine im Herzen von Trenčín."

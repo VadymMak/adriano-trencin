@@ -21,6 +21,22 @@
     "ctaReservation": "Rezervovať stôl",
     "ctaMenu": "Zobraziť menu"
   },
+  "featured": {
+    "label": "Odporúčame",
+    "title": "Naše špeciality",
+    "subtitle": "Obľúbené jedlá našich hostí",
+    "order": "Objednať",
+    "dishes": {
+      "chobotnica":    { "name": "Chobotnica na grile",        "desc": "Grilovaná chobotnica s citrónom a olivovým olejom" },
+      "bavette-fruti": { "name": "Bavette Fruti di Mare",       "desc": "Čerstvé morské plody, cesnak, cherry paradajky" },
+      "homar":         { "name": "Homár s prílohou",            "desc": "Čerstvý homár grilovaný na masle" },
+      "tuna":          { "name": "Steak z tuniaka",             "desc": "Tuniak na grile so zeleninou" },
+      "paella":        { "name": "Paella plody mora",           "desc": "Krevety, sépia, slávky, chobotnica" },
+      "bavette-adriano": { "name": "Bavette ADRIANO",           "desc": "Krevety a pistáciové pesto" },
+      "pizza-adriano": { "name": "Pizza Adriano",               "desc": "Rukola, krevety, paradajková omáčka" },
+      "fuzi":          { "name": "Fuži s čiernou hľuzovkou",   "desc": "Istrské fuži, čierna hľuzovka, smotana" }
+    }
+  },
   "meta": {
     "title": "Adriano – Reštaurácia & Cafe Trenčín",
     "description": "Stredomorská kuchyňa, morské plody a vína v srdci Trenčína."

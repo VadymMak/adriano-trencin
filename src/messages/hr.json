@@ -21,6 +21,22 @@
     "ctaReservation": "Rezervirajte stol",
     "ctaMenu": "Pogledajte jelovnik"
   },
+  "featured": {
+    "label": "Preporučujemo",
+    "title": "Naše specijalitete",
+    "subtitle": "Omiljena jela naših gostiju",
+    "order": "Naruči",
+    "dishes": {
+      "chobotnica":    { "name": "Hobotnica na žaru",             "desc": "Hobotnica na žaru s limunom i maslinovim uljem" },
+      "bavette-fruti": { "name": "Bavette Fruti di Mare",          "desc": "Svježi plodovi mora, češnjak, cherry rajčice" },
+      "homar":         { "name": "Jastog s prilogom",              "desc": "Svježi jastog pečen na maslacu" },
+      "tuna":          { "name": "Odrezak od tune",                "desc": "Tuna na žaru s povrćem" },
+      "paella":        { "name": "Paella plodovi mora",            "desc": "Kozice, sipa, dagnje, hobotnica" },
+      "bavette-adriano": { "name": "Bavette ADRIANO",              "desc": "Kozice i pistacijevo pesto" },
+      "pizza-adriano": { "name": "Pizza Adriano",                  "desc": "Rukola, kozice, umak od rajčice" },
+      "fuzi":          { "name": "Fuži s crnim tartufom",          "desc": "Istarski fuži, crni tartuf, vrhnje" }
+    }
+  },
   "meta": {
     "title": "Adriano – Restoran & Cafe Trenčín",
     "description": "Mediteranska kuhinja, plodovi mora i vina u srcu Trenčína."

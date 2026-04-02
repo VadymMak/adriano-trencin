@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: 60% 40%;
   align-items: stretch;
-  min-height: 100svh;
+  min-height: 75svh;
 }
 
 .hero::before {
@@ -311,7 +311,7 @@
 
   .left {
     padding: 64px 24px 40px;
-    min-height: 100svh;
+    min-height: 75svh;
   }
 
   .right {
