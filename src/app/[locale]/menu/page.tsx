@@ -1,5 +1,9 @@
 'use client';
 
+declare global {
+  interface Window { __programmaticScroll: boolean; }
+}
+
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import MenuCard from '@/components/ui/MenuCard/MenuCard';
@@ -17,9 +21,10 @@ export default function MenuPage() {
   const scrollToCategory = (categoryId: string) => {
     const el = document.getElementById(categoryId);
     if (!el) return;
-    window.dispatchEvent(new Event('programmatic-scroll-start'));
+    window.__programmaticScroll = true;
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     setTimeout(() => {
+      window.__programmaticScroll = false;
       window.dispatchEvent(new Event('programmatic-scroll-end'));
     }, 1000);
   };

@@ -1,5 +1,9 @@
 'use client';
 
+declare global {
+  interface Window { __programmaticScroll: boolean; }
+}
+
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
@@ -60,7 +64,7 @@ export default function Header() {
   const [langOpen, setLangOpen] = useState(false);
   const [hidden, setHidden]     = useState(false);
   const lastScrollY             = useRef(0);
-  const isProgrammaticScroll    = useRef(false);
+  const ticking                 = useRef(false);
   const t                       = useTranslations('nav');
   const currentLocale             = useLocale();
 
@@ -72,30 +76,37 @@ export default function Header() {
   const router                    = useRouter();
   const pathname                  = usePathname();
 
-  // Vendly pattern: useRef for lastScrollY — no re-render on every scroll tick
   useEffect(() => {
-    const THRESHOLD = 10;
     const handleScroll = () => {
-      if (isProgrammaticScroll.current) return;
-      const currentY = window.scrollY;
-      if (Math.abs(currentY - lastScrollY.current) < THRESHOLD) return;
-      setHidden(currentY > lastScrollY.current && currentY > 80);
-      lastScrollY.current = currentY;
+      if (ticking.current) return;
+      ticking.current = true;
+      window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY < 10) {
+          setHidden(false);
+        } else if (currentScrollY < lastScrollY.current - 5) {
+          setHidden(false);
+        } else if (currentScrollY > lastScrollY.current + 5) {
+          if (!window.__programmaticScroll) {
+            setHidden(true);
+          }
+        }
+
+        lastScrollY.current = currentScrollY;
+        ticking.current = false;
+      });
     };
 
-    const onProgrammaticStart = () => { isProgrammaticScroll.current = true; };
-    const onProgrammaticEnd   = () => {
-      isProgrammaticScroll.current = false;
-      lastScrollY.current = window.scrollY;
-    };
+    const onProgrammaticEnd = () => { lastScrollY.current = window.scrollY; };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('programmatic-scroll-start', onProgrammaticStart);
-    window.addEventListener('programmatic-scroll-end',   onProgrammaticEnd);
+    window.addEventListener('scroll',    handleScroll, { passive: true });
+    window.addEventListener('touchmove', handleScroll, { passive: true });
+    window.addEventListener('programmatic-scroll-end', onProgrammaticEnd);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('programmatic-scroll-start', onProgrammaticStart);
-      window.removeEventListener('programmatic-scroll-end',   onProgrammaticEnd);
+      window.removeEventListener('scroll',    handleScroll);
+      window.removeEventListener('touchmove', handleScroll);
+      window.removeEventListener('programmatic-scroll-end', onProgrammaticEnd);
     };
   }, []);
 
