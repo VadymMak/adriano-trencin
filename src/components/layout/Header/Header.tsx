@@ -77,7 +77,12 @@ export default function Header() {
     const handleScroll = () => {
       const currentY = window.scrollY;
       if (Math.abs(currentY - lastScrollY.current) < THRESHOLD) return;
-      setHidden(currentY > lastScrollY.current && currentY > 80);
+      const isHidden = currentY > lastScrollY.current && currentY > 80;
+      setHidden(isHidden);
+      document.documentElement.style.setProperty(
+        '--header-offset',
+        isHidden ? '0px' : '64px'
+      );
       lastScrollY.current = currentY;
     };
     window.addEventListener('scroll', handleScroll, { passive: true });

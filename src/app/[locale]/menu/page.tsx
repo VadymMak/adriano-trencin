@@ -17,9 +17,11 @@ export default function MenuPage() {
   const scrollToCategory = (categoryId: string) => {
     const element = document.getElementById(categoryId);
     if (!element) return;
-    const headerHeight = 64;
+    const headerOffset = parseInt(
+      getComputedStyle(document.documentElement).getPropertyValue('--header-offset') || '64'
+    );
     const filterHeight = 48;
-    const offset = headerHeight + filterHeight + 16;
+    const offset = headerOffset + filterHeight + 16;
     const elementTop = element.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({ top: elementTop - offset, behavior: 'smooth' });
   };
