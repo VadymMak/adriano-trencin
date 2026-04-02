@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import styles from './FeaturedSection.module.css';
 
 interface FeaturedItem {
@@ -96,15 +95,8 @@ export default function FeaturedSection() {
         <div className={styles.grid}>
           {FEATURED_ITEMS.map((item) => (
             <article key={item.id} className={styles.card}>
-              <div className={styles.imageWrap}>
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  sizes="(max-width: 767px) 50vw, 25vw"
-                  className={styles.image}
-                  unoptimized
-                />
+              <div className={styles.cardImage}>
+                <span>{item.category}</span>
               </div>
               <div className={styles.body}>
                 <span className={styles.category}>{item.category}</span>
