@@ -305,32 +305,27 @@
 @media (max-width: 767px) {
   .hero {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    min-height: unset;
+    min-height: 75svh;
   }
 
   .left {
-    padding: 64px 24px 40px;
+    padding: 64px 24px 48px;
     min-height: 75svh;
   }
 
   .right {
-    border-left: none;
-    border-top: 1px solid var(--color-border);
-    padding: 32px 20px 40px;
-    gap: 16px;
-  }
-
-  .cats {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding-bottom: 4px;
-  }
-
-  .cats::-webkit-scrollbar {
     display: none;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btnGold,
+  .btnOutline {
+    width: 100%;
+    text-align: center;
   }
 }
 
