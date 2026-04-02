@@ -64,7 +64,7 @@
 
 .subtitle {
   font-size: 14px;
-  color: var(--color-ocean);
+  color: var(--color-ocean-label);
   letter-spacing: 2px;
   font-style: italic;
 }
@@ -164,7 +164,7 @@
   font-size: 11px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--color-ocean);
+  color: var(--color-ocean-label);
   background: transparent;
   border: 0.5px solid var(--color-border-ocean);
   padding: 6px 14px;
@@ -244,7 +244,7 @@
   font-size: 9px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--color-ocean);
+  color: var(--color-ocean-label);
 }
 
 .cardName {

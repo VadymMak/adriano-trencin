@@ -9,14 +9,15 @@
   --color-gold:         #c9a347;
   --color-gold-hover:   #e0b85a;
   --color-gold-dark:    #a8893e;
-  --color-ocean:        #4a7fa5;
+  --color-ocean:        #6aabcf;
   --color-ocean-dark:   #1a3a52;
+  --color-ocean-label:  #85b7eb;
 
   /* Colors — text */
   --color-text-primary:   #ffffff;
-  --color-text-secondary: #c8c0b0;
-  --color-text-muted:     #666666;
-  --color-text-faint:     #444444;
+  --color-text-secondary: #d0c8b8;
+  --color-text-muted:     #9a9a9a;
+  --color-text-faint:     #707070;
 
   /* Colors — borders */
   --color-border:       rgba(201, 163, 71, 0.2);
