@@ -25,13 +25,19 @@
     "label": "Reservation",
     "title": "Book a table",
     "fields": {
-      "name": "Full name", "namePlaceholder": "John Smith",
-      "phone": "Phone", "phonePlaceholder": "+1 XXX XXX XXXX",
-      "email": "Email", "emailPlaceholder": "your@email.com",
+      "name": "Full name",
+      "namePlaceholder": "John Smith",
+      "phone": "Phone",
+      "phonePlaceholder": "+1 XXX XXX XXXX",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
       "date": "Date",
-      "time": "Time", "timePlaceholder": "Select time",
-      "guests": "Number of guests", "guestsPlaceholder": "Number of guests",
-      "message": "Message / note", "messagePlaceholder": "Message (optional)"
+      "time": "Time",
+      "timePlaceholder": "Select time",
+      "guests": "Number of guests",
+      "guestsPlaceholder": "Number of guests",
+      "message": "Message / note",
+      "messagePlaceholder": "Message (optional)"
     },
     "submitBtn": "Book table",
     "whatsappBtn": "WhatsApp",
@@ -52,28 +58,58 @@
     "groupText": "For groups of 6+ and special events please contact us directly on WhatsApp",
     "groupBtn": "Message on WhatsApp",
     "hours": "Opening hours",
-    "hoursRows": ["Monday – Friday: 11:00 – 22:00", "Saturday: 11:00 – 23:00", "Sunday: 12:00 – 21:00"],
+    "hoursRows": [
+      "Monday – Friday: 11:00 – 22:00",
+      "Saturday: 11:00 – 23:00",
+      "Sunday: 12:00 – 21:00"
+    ],
     "address": "Námestie sv. Anny 3, Trenčín",
     "phone2": "0949 551 553",
     "emailInfo": "adrianorestaurantcafe@gmail.com",
-    "guestOptions": ["1 guest", "2 guests", "3 guests", "4 guests", "5 guests", "6 guests", "7 guests", "8 guests", "9 guests", "10+ guests"]
+    "guestOptions": [
+      "1 guest",
+      "2 guests",
+      "3 guests",
+      "4 guests",
+      "5 guests",
+      "6 guests",
+      "7 guests",
+      "8 guests",
+      "9 guests",
+      "10+ guests"
+    ]
   },
   "about": {
     "label": "About us",
     "title": "The taste of the sea in the heart of Trenčín",
     "text": "Adriano Restaurant & Cafe brings authentic Mediterranean cuisine with fresh seafood, homemade pasta and wines directly from Istria and Croatia. Since 2015 we have been a place where friends, families and lovers of good food come together.",
-    "stat1Value": "2015", "stat1Label": "Year opened",
-    "stat2Value": "120",  "stat2Label": "Restaurant seats",
-    "stat3Value": "5",    "stat3Label": "Cuisine countries"
+    "stat1Value": "2015",
+    "stat1Label": "Year opened",
+    "stat2Value": "120",
+    "stat2Label": "Restaurant seats",
+    "stat3Value": "5",
+    "stat3Label": "Cuisine countries"
   },
   "reviews": {
     "label": "Reviews",
     "title": "What our guests say",
     "items": [
-      { "text": "Fantastic grilled octopus! Best restaurant in Trenčín.", "author": "Mária K." },
-      { "text": "Bavette Fruti di Mare was perfect. I will definitely come back!", "author": "Peter S." },
-      { "text": "Great service, excellent wine from Istria. Atmosphere like in Croatia.", "author": "Jana M." },
-      { "text": "The lobster was fresh and perfectly prepared. I recommend it to everyone!", "author": "Tomáš B." }
+      {
+        "text": "Fantastic grilled octopus! Best restaurant in Trenčín.",
+        "author": "Mária K."
+      },
+      {
+        "text": "Bavette Fruti di Mare was perfect. I will definitely come back!",
+        "author": "Peter S."
+      },
+      {
+        "text": "Great service, excellent wine from Istria. Atmosphere like in Croatia.",
+        "author": "Jana M."
+      },
+      {
+        "text": "The lobster was fresh and perfectly prepared. I recommend it to everyone!",
+        "author": "Tomáš B."
+      }
     ]
   },
   "featured": {
@@ -82,14 +118,38 @@
     "subtitle": "Our guests' favourite dishes",
     "order": "Order",
     "dishes": {
-      "chobotnica":    { "name": "Grilled Octopus",               "desc": "Grilled octopus with lemon and olive oil" },
-      "bavette-fruti": { "name": "Bavette Fruti di Mare",          "desc": "Fresh seafood, garlic, cherry tomatoes" },
-      "homar":         { "name": "Lobster with side dish",         "desc": "Fresh lobster grilled in butter" },
-      "tuna":          { "name": "Tuna steak",                     "desc": "Grilled tuna with vegetables" },
-      "paella":        { "name": "Seafood Paella",                 "desc": "Prawns, cuttlefish, mussels, octopus" },
-      "bavette-adriano": { "name": "Bavette ADRIANO",              "desc": "Prawns and pistachio pesto" },
-      "pizza-adriano": { "name": "Pizza Adriano",                  "desc": "Rocket, prawns, tomato sauce" },
-      "fuzi":          { "name": "Fuži with black truffle",        "desc": "Istrian fuži, black truffle, cream" }
+      "chobotnica": {
+        "name": "Grilled Octopus",
+        "desc": "Grilled octopus with lemon and olive oil"
+      },
+      "bavette-fruti": {
+        "name": "Bavette Fruti di Mare",
+        "desc": "Fresh seafood, garlic, cherry tomatoes"
+      },
+      "homar": {
+        "name": "Lobster with side dish",
+        "desc": "Fresh lobster grilled in butter"
+      },
+      "tuna": {
+        "name": "Tuna steak",
+        "desc": "Grilled tuna with vegetables"
+      },
+      "paella": {
+        "name": "Seafood Paella",
+        "desc": "Prawns, cuttlefish, mussels, octopus"
+      },
+      "bavette-adriano": {
+        "name": "Bavette ADRIANO",
+        "desc": "Prawns and pistachio pesto"
+      },
+      "pizza-adriano": {
+        "name": "Pizza Adriano",
+        "desc": "Rocket, prawns, tomato sauce"
+      },
+      "fuzi": {
+        "name": "Fuži with black truffle",
+        "desc": "Istrian fuži, black truffle, cream"
+      }
     }
   },
   "menu": {
@@ -98,17 +158,17 @@
     "allergensTitle": "Allergens",
     "allergensList": "1 – Gluten · 2 – Crustaceans · 3 – Eggs · 4 – Fish · 7 – Milk · 8 – Nuts · 14 – Molluscs",
     "categories": {
-      "all":         "All",
-      "predjedla":   "Starters",
-      "cestoviny":   "Pasta",
-      "pizza":       "Pizza",
-      "ryby":        "Fish & seafood",
-      "jedla-vopred":"Pre-order",
-      "maso":        "Meat",
-      "prilohy":     "Sides",
-      "salaty":      "Salads",
-      "dezerty":     "Desserts",
-      "napoje":      "Drinks"
+      "all": "All",
+      "predjedla": "Starters",
+      "cestoviny": "Pasta",
+      "pizza": "Pizza",
+      "ryby": "Fish & seafood",
+      "jedla-vopred": "Pre-order",
+      "maso": "Meat",
+      "prilohy": "Sides",
+      "salaty": "Salads",
+      "dezerty": "Desserts",
+      "napoje": "Drinks"
     }
   },
   "cta": {
@@ -121,10 +181,18 @@
     "label": "Gallery",
     "title": "Atmosphere & food",
     "items": [
-      "Restaurant atmosphere", "Grilled octopus", "Bavette Fruti di Mare",
-      "Evening atmosphere", "Tuna steak", "Seafood paella",
-      "Bar & wines", "Lobster with side dish", "Pizza Adriano",
-      "Summer terrace", "Desserts", "Wine from Istria"
+      "Restaurant atmosphere",
+      "Grilled octopus",
+      "Bavette Fruti di Mare",
+      "Evening atmosphere",
+      "Tuna steak",
+      "Seafood paella",
+      "Bar & wines",
+      "Lobster with side dish",
+      "Pizza Adriano",
+      "Summer terrace",
+      "Desserts",
+      "Wine from Istria"
     ]
   },
   "instagram": {
@@ -136,5 +204,25 @@
   "meta": {
     "title": "Adriano – Restaurant & Cafe Trenčín",
     "description": "Mediterranean cuisine, seafood and wines in the heart of Trenčín."
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Find Us in the Heart of Trenčín",
+    "pageTitle": "Contact",
+    "pageSubtitle": "Find Us in the Heart of Trenčín",
+    "addressTitle": "Address",
+    "address1": "Námestie sv. Anny 3",
+    "address2": "911 01 Trenčín, Slovakia",
+    "phoneTitle": "Phone",
+    "phone": "+421 949 551 553",
+    "hoursTitle": "Opening Hours",
+    "hours1": "Monday – Friday: 11:00 – 22:00",
+    "hours2": "Saturday: 11:00 – 23:00",
+    "hours3": "Sunday: 12:00 – 21:00",
+    "hoursNote": "Kitchen closes 30 min. before closing time.",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "whatsapp": "WhatsApp",
+    "mapBtn": "Open in Google Maps"
   }
 }

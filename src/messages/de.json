@@ -25,13 +25,19 @@
     "label": "Reservierung",
     "title": "Tisch reservieren",
     "fields": {
-      "name": "Vor- und Nachname", "namePlaceholder": "Max Mustermann",
-      "phone": "Telefon", "phonePlaceholder": "+49 XXX XXXXXXX",
-      "email": "E-Mail", "emailPlaceholder": "ihre@email.de",
+      "name": "Vor- und Nachname",
+      "namePlaceholder": "Max Mustermann",
+      "phone": "Telefon",
+      "phonePlaceholder": "+49 XXX XXXXXXX",
+      "email": "E-Mail",
+      "emailPlaceholder": "ihre@email.de",
       "date": "Datum",
-      "time": "Uhrzeit", "timePlaceholder": "Zeit wählen",
-      "guests": "Personenanzahl", "guestsPlaceholder": "Personenanzahl",
-      "message": "Nachricht / Anmerkung", "messagePlaceholder": "Nachricht (optional)"
+      "time": "Uhrzeit",
+      "timePlaceholder": "Zeit wählen",
+      "guests": "Personenanzahl",
+      "guestsPlaceholder": "Personenanzahl",
+      "message": "Nachricht / Anmerkung",
+      "messagePlaceholder": "Nachricht (optional)"
     },
     "submitBtn": "Reservieren",
     "whatsappBtn": "WhatsApp",
@@ -52,28 +58,58 @@
     "groupText": "Für Gruppen ab 6 Personen und besondere Veranstaltungen kontaktieren Sie uns direkt per WhatsApp",
     "groupBtn": "WhatsApp schreiben",
     "hours": "Öffnungszeiten",
-    "hoursRows": ["Montag – Freitag: 11:00 – 22:00", "Samstag: 11:00 – 23:00", "Sonntag: 12:00 – 21:00"],
+    "hoursRows": [
+      "Montag – Freitag: 11:00 – 22:00",
+      "Samstag: 11:00 – 23:00",
+      "Sonntag: 12:00 – 21:00"
+    ],
     "address": "Námestie sv. Anny 3, Trenčín",
     "phone2": "0949 551 553",
     "emailInfo": "adrianorestaurantcafe@gmail.com",
-    "guestOptions": ["1 Person", "2 Personen", "3 Personen", "4 Personen", "5 Personen", "6 Personen", "7 Personen", "8 Personen", "9 Personen", "10+ Personen"]
+    "guestOptions": [
+      "1 Person",
+      "2 Personen",
+      "3 Personen",
+      "4 Personen",
+      "5 Personen",
+      "6 Personen",
+      "7 Personen",
+      "8 Personen",
+      "9 Personen",
+      "10+ Personen"
+    ]
   },
   "about": {
     "label": "Über uns",
     "title": "Meeresgeschmack im Herzen von Trenčín",
     "text": "Adriano Restaurant & Cafe bringt authentische mediterrane Küche mit frischen Meeresfrüchten, hausgemachten Nudeln und Weinen direkt aus Istrien und Kroatien. Seit 2015 sind wir ein Ort, an dem sich Freunde, Familien und Liebhaber guter Küche treffen.",
-    "stat1Value": "2015", "stat1Label": "Eröffnungsjahr",
-    "stat2Value": "120",  "stat2Label": "Plätze im Restaurant",
-    "stat3Value": "5",    "stat3Label": "Länder der Küche"
+    "stat1Value": "2015",
+    "stat1Label": "Eröffnungsjahr",
+    "stat2Value": "120",
+    "stat2Label": "Plätze im Restaurant",
+    "stat3Value": "5",
+    "stat3Label": "Länder der Küche"
   },
   "reviews": {
     "label": "Bewertungen",
     "title": "Was unsere Gäste sagen",
     "items": [
-      { "text": "Fantastischer gegrillter Oktopus! Bestes Restaurant in Trenčín.", "author": "Mária K." },
-      { "text": "Bavette Fruti di Mare war perfekt. Ich komme definitiv wieder!", "author": "Peter S." },
-      { "text": "Toller Service, ausgezeichneter Wein aus Istrien. Atmosphäre wie in Kroatien.", "author": "Jana M." },
-      { "text": "Der Hummer war frisch und perfekt zubereitet. Ich empfehle es allen!", "author": "Tomáš B." }
+      {
+        "text": "Fantastischer gegrillter Oktopus! Bestes Restaurant in Trenčín.",
+        "author": "Mária K."
+      },
+      {
+        "text": "Bavette Fruti di Mare war perfekt. Ich komme definitiv wieder!",
+        "author": "Peter S."
+      },
+      {
+        "text": "Toller Service, ausgezeichneter Wein aus Istrien. Atmosphäre wie in Kroatien.",
+        "author": "Jana M."
+      },
+      {
+        "text": "Der Hummer war frisch und perfekt zubereitet. Ich empfehle es allen!",
+        "author": "Tomáš B."
+      }
     ]
   },
   "featured": {
@@ -82,14 +118,38 @@
     "subtitle": "Lieblingsgerichte unserer Gäste",
     "order": "Bestellen",
     "dishes": {
-      "chobotnica":    { "name": "Gegrillter Oktopus",           "desc": "Gegrillter Oktopus mit Zitrone und Olivenöl" },
-      "bavette-fruti": { "name": "Bavette Fruti di Mare",         "desc": "Frische Meeresfrüchte, Knoblauch, Kirschtomaten" },
-      "homar":         { "name": "Hummer mit Beilage",            "desc": "Frischer Hummer auf Butter gegrillt" },
-      "tuna":          { "name": "Thunfischsteak",                "desc": "Thunfisch vom Grill mit Gemüse" },
-      "paella":        { "name": "Meeresfrüchte-Paella",          "desc": "Garnelen, Sepia, Muscheln, Oktopus" },
-      "bavette-adriano": { "name": "Bavette ADRIANO",             "desc": "Garnelen und Pistazien-Pesto" },
-      "pizza-adriano": { "name": "Pizza Adriano",                 "desc": "Rucola, Garnelen, Tomatensauce" },
-      "fuzi":          { "name": "Fuži mit schwarzem Trüffel",    "desc": "Istrische Fuži, schwarzer Trüffel, Sahne" }
+      "chobotnica": {
+        "name": "Gegrillter Oktopus",
+        "desc": "Gegrillter Oktopus mit Zitrone und Olivenöl"
+      },
+      "bavette-fruti": {
+        "name": "Bavette Fruti di Mare",
+        "desc": "Frische Meeresfrüchte, Knoblauch, Kirschtomaten"
+      },
+      "homar": {
+        "name": "Hummer mit Beilage",
+        "desc": "Frischer Hummer auf Butter gegrillt"
+      },
+      "tuna": {
+        "name": "Thunfischsteak",
+        "desc": "Thunfisch vom Grill mit Gemüse"
+      },
+      "paella": {
+        "name": "Meeresfrüchte-Paella",
+        "desc": "Garnelen, Sepia, Muscheln, Oktopus"
+      },
+      "bavette-adriano": {
+        "name": "Bavette ADRIANO",
+        "desc": "Garnelen und Pistazien-Pesto"
+      },
+      "pizza-adriano": {
+        "name": "Pizza Adriano",
+        "desc": "Rucola, Garnelen, Tomatensauce"
+      },
+      "fuzi": {
+        "name": "Fuži mit schwarzem Trüffel",
+        "desc": "Istrische Fuži, schwarzer Trüffel, Sahne"
+      }
     }
   },
   "menu": {
@@ -98,17 +158,17 @@
     "allergensTitle": "Allergene",
     "allergensList": "1 – Gluten · 2 – Krebstiere · 3 – Eier · 4 – Fisch · 7 – Milch · 8 – Nüsse · 14 – Weichtiere",
     "categories": {
-      "all":         "Alles",
-      "predjedla":   "Vorspeisen",
-      "cestoviny":   "Nudeln",
-      "pizza":       "Pizza",
-      "ryby":        "Fisch & Meeresfrüchte",
-      "jedla-vopred":"Auf Bestellung",
-      "maso":        "Fleisch",
-      "prilohy":     "Beilagen",
-      "salaty":      "Salate",
-      "dezerty":     "Desserts",
-      "napoje":      "Getränke"
+      "all": "Alles",
+      "predjedla": "Vorspeisen",
+      "cestoviny": "Nudeln",
+      "pizza": "Pizza",
+      "ryby": "Fisch & Meeresfrüchte",
+      "jedla-vopred": "Auf Bestellung",
+      "maso": "Fleisch",
+      "prilohy": "Beilagen",
+      "salaty": "Salate",
+      "dezerty": "Desserts",
+      "napoje": "Getränke"
     }
   },
   "cta": {
@@ -121,10 +181,18 @@
     "label": "Galerie",
     "title": "Atmosphäre & Speisen",
     "items": [
-      "Restaurantatmosphäre", "Gegrillter Oktopus", "Bavette Fruti di Mare",
-      "Abendatmosphäre", "Thunfischsteak", "Meeresfrüchte-Paella",
-      "Bar & Weine", "Hummer mit Beilage", "Pizza Adriano",
-      "Sommerterrasse", "Desserts", "Wein aus Istrien"
+      "Restaurantatmosphäre",
+      "Gegrillter Oktopus",
+      "Bavette Fruti di Mare",
+      "Abendatmosphäre",
+      "Thunfischsteak",
+      "Meeresfrüchte-Paella",
+      "Bar & Weine",
+      "Hummer mit Beilage",
+      "Pizza Adriano",
+      "Sommerterrasse",
+      "Desserts",
+      "Wein aus Istrien"
     ]
   },
   "instagram": {
@@ -136,5 +204,25 @@
   "meta": {
     "title": "Adriano – Restaurant & Cafe Trenčín",
     "description": "Mittelmeerküche, Meeresfrüchte und Weine im Herzen von Trenčín."
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Finden Sie uns im Herzen von Trenčín",
+    "pageTitle": "Kontakt",
+    "pageSubtitle": "Finden Sie uns im Herzen von Trenčín",
+    "addressTitle": "Adresse",
+    "address1": "Námestie sv. Anny 3",
+    "address2": "911 01 Trenčín, Slowakei",
+    "phoneTitle": "Telefon",
+    "phone": "+421 949 551 553",
+    "hoursTitle": "Öffnungszeiten",
+    "hours1": "Montag – Freitag: 11:00 – 22:00",
+    "hours2": "Samstag: 11:00 – 23:00",
+    "hours3": "Sonntag: 12:00 – 21:00",
+    "hoursNote": "Die Küche schließt 30 Min. vor Betriebsende.",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "whatsapp": "WhatsApp",
+    "mapBtn": "In Google Maps öffnen"
   }
 }

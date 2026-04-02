@@ -25,13 +25,19 @@
     "label": "Rezervacija",
     "title": "Rezervirajte stol",
     "fields": {
-      "name": "Ime i prezime", "namePlaceholder": "Ivan Horvat",
-      "phone": "Telefon", "phonePlaceholder": "+385 9X XXX XXXX",
-      "email": "Email", "emailPlaceholder": "vas@email.hr",
+      "name": "Ime i prezime",
+      "namePlaceholder": "Ivan Horvat",
+      "phone": "Telefon",
+      "phonePlaceholder": "+385 9X XXX XXXX",
+      "email": "Email",
+      "emailPlaceholder": "vas@email.hr",
       "date": "Datum",
-      "time": "Vrijeme", "timePlaceholder": "Odaberite vrijeme",
-      "guests": "Broj osoba", "guestsPlaceholder": "Broj osoba",
-      "message": "Poruka / napomena", "messagePlaceholder": "Poruka (neobavezno)"
+      "time": "Vrijeme",
+      "timePlaceholder": "Odaberite vrijeme",
+      "guests": "Broj osoba",
+      "guestsPlaceholder": "Broj osoba",
+      "message": "Poruka / napomena",
+      "messagePlaceholder": "Poruka (neobavezno)"
     },
     "submitBtn": "Rezerviraj",
     "whatsappBtn": "WhatsApp",
@@ -52,28 +58,58 @@
     "groupText": "Za grupe 6+ osoba i posebne događaje kontaktirajte nas izravno putem WhatsAppa",
     "groupBtn": "Napisati na WhatsApp",
     "hours": "Radno vrijeme",
-    "hoursRows": ["Ponedjeljak – Petak: 11:00 – 22:00", "Subota: 11:00 – 23:00", "Nedjelja: 12:00 – 21:00"],
+    "hoursRows": [
+      "Ponedjeljak – Petak: 11:00 – 22:00",
+      "Subota: 11:00 – 23:00",
+      "Nedjelja: 12:00 – 21:00"
+    ],
     "address": "Námestie sv. Anny 3, Trenčín",
     "phone2": "0949 551 553",
     "emailInfo": "adrianorestaurantcafe@gmail.com",
-    "guestOptions": ["1 osoba", "2 osobe", "3 osobe", "4 osobe", "5 osoba", "6 osoba", "7 osoba", "8 osoba", "9 osoba", "10+ osoba"]
+    "guestOptions": [
+      "1 osoba",
+      "2 osobe",
+      "3 osobe",
+      "4 osobe",
+      "5 osoba",
+      "6 osoba",
+      "7 osoba",
+      "8 osoba",
+      "9 osoba",
+      "10+ osoba"
+    ]
   },
   "about": {
     "label": "O nama",
     "title": "Okus mora u srcu Trenčína",
     "text": "Adriano Restaurant & Cafe donosi autentičnu mediteransku kuhinju s svježim plodovima mora, domaćim tjesteninama i vinima izravno iz Istre i Hrvatske. Od 2015. godine smo mjesto gdje se susreću prijatelji, obitelji i ljubitelji dobre kuhinje.",
-    "stat1Value": "2015", "stat1Label": "Godina otvaranja",
-    "stat2Value": "120",  "stat2Label": "Mjesta u restoranu",
-    "stat3Value": "5",    "stat3Label": "Zemalja kuhinje"
+    "stat1Value": "2015",
+    "stat1Label": "Godina otvaranja",
+    "stat2Value": "120",
+    "stat2Label": "Mjesta u restoranu",
+    "stat3Value": "5",
+    "stat3Label": "Zemalja kuhinje"
   },
   "reviews": {
     "label": "Recenzije",
     "title": "Što kažu naši gosti",
     "items": [
-      { "text": "Fantastična hobotnica na žaru! Najbolji restoran u Trenčínu.", "author": "Mária K." },
-      { "text": "Bavette Fruti di Mare je bilo savršeno. Svakako ću doći opet!", "author": "Peter S." },
-      { "text": "Izvrsna usluga, odlično vino iz Istre. Atmosfera kao u Hrvatskoj.", "author": "Jana M." },
-      { "text": "Jastog je bio svjež i savršeno pripremljen. Preporučujem svima!", "author": "Tomáš B." }
+      {
+        "text": "Fantastična hobotnica na žaru! Najbolji restoran u Trenčínu.",
+        "author": "Mária K."
+      },
+      {
+        "text": "Bavette Fruti di Mare je bilo savršeno. Svakako ću doći opet!",
+        "author": "Peter S."
+      },
+      {
+        "text": "Izvrsna usluga, odlično vino iz Istre. Atmosfera kao u Hrvatskoj.",
+        "author": "Jana M."
+      },
+      {
+        "text": "Jastog je bio svjež i savršeno pripremljen. Preporučujem svima!",
+        "author": "Tomáš B."
+      }
     ]
   },
   "featured": {
@@ -82,14 +118,38 @@
     "subtitle": "Omiljena jela naših gostiju",
     "order": "Naruči",
     "dishes": {
-      "chobotnica":    { "name": "Hobotnica na žaru",             "desc": "Hobotnica na žaru s limunom i maslinovim uljem" },
-      "bavette-fruti": { "name": "Bavette Fruti di Mare",          "desc": "Svježi plodovi mora, češnjak, cherry rajčice" },
-      "homar":         { "name": "Jastog s prilogom",              "desc": "Svježi jastog pečen na maslacu" },
-      "tuna":          { "name": "Odrezak od tune",                "desc": "Tuna na žaru s povrćem" },
-      "paella":        { "name": "Paella plodovi mora",            "desc": "Kozice, sipa, dagnje, hobotnica" },
-      "bavette-adriano": { "name": "Bavette ADRIANO",              "desc": "Kozice i pistacijevo pesto" },
-      "pizza-adriano": { "name": "Pizza Adriano",                  "desc": "Rukola, kozice, umak od rajčice" },
-      "fuzi":          { "name": "Fuži s crnim tartufom",          "desc": "Istarski fuži, crni tartuf, vrhnje" }
+      "chobotnica": {
+        "name": "Hobotnica na žaru",
+        "desc": "Hobotnica na žaru s limunom i maslinovim uljem"
+      },
+      "bavette-fruti": {
+        "name": "Bavette Fruti di Mare",
+        "desc": "Svježi plodovi mora, češnjak, cherry rajčice"
+      },
+      "homar": {
+        "name": "Jastog s prilogom",
+        "desc": "Svježi jastog pečen na maslacu"
+      },
+      "tuna": {
+        "name": "Odrezak od tune",
+        "desc": "Tuna na žaru s povrćem"
+      },
+      "paella": {
+        "name": "Paella plodovi mora",
+        "desc": "Kozice, sipa, dagnje, hobotnica"
+      },
+      "bavette-adriano": {
+        "name": "Bavette ADRIANO",
+        "desc": "Kozice i pistacijevo pesto"
+      },
+      "pizza-adriano": {
+        "name": "Pizza Adriano",
+        "desc": "Rukola, kozice, umak od rajčice"
+      },
+      "fuzi": {
+        "name": "Fuži s crnim tartufom",
+        "desc": "Istarski fuži, crni tartuf, vrhnje"
+      }
     }
   },
   "menu": {
@@ -98,17 +158,17 @@
     "allergensTitle": "Alergeni",
     "allergensList": "1 – Gluten · 2 – Rakovi · 3 – Jaja · 4 – Riba · 7 – Mlijeko · 8 – Orašasti plodovi · 14 – Mekušci",
     "categories": {
-      "all":         "Sve",
-      "predjedla":   "Predjela",
-      "cestoviny":   "Tjestenine",
-      "pizza":       "Pizza",
-      "ryby":        "Riba & plodovi mora",
-      "jedla-vopred":"Na narudžbu",
-      "maso":        "Meso",
-      "prilohy":     "Prilozi",
-      "salaty":      "Salate",
-      "dezerty":     "Deserti",
-      "napoje":      "Napici"
+      "all": "Sve",
+      "predjedla": "Predjela",
+      "cestoviny": "Tjestenine",
+      "pizza": "Pizza",
+      "ryby": "Riba & plodovi mora",
+      "jedla-vopred": "Na narudžbu",
+      "maso": "Meso",
+      "prilohy": "Prilozi",
+      "salaty": "Salate",
+      "dezerty": "Deserti",
+      "napoje": "Napici"
     }
   },
   "cta": {
@@ -121,10 +181,18 @@
     "label": "Galerija",
     "title": "Atmosfera & jela",
     "items": [
-      "Atmosfera restorana", "Hobotnica na žaru", "Bavette Fruti di Mare",
-      "Večernja atmosfera", "Odrezak od tune", "Paella plodovi mora",
-      "Bar & vina", "Jastog s prilogom", "Pizza Adriano",
-      "Ljetna terasa", "Deserti", "Vino iz Istre"
+      "Atmosfera restorana",
+      "Hobotnica na žaru",
+      "Bavette Fruti di Mare",
+      "Večernja atmosfera",
+      "Odrezak od tune",
+      "Paella plodovi mora",
+      "Bar & vina",
+      "Jastog s prilogom",
+      "Pizza Adriano",
+      "Ljetna terasa",
+      "Deserti",
+      "Vino iz Istre"
     ]
   },
   "instagram": {
@@ -136,5 +204,25 @@
   "meta": {
     "title": "Adriano – Restoran & Cafe Trenčín",
     "description": "Mediteranska kuhinja, plodovi mora i vina u srcu Trenčína."
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Pronađite nas u srcu Trenčína",
+    "pageTitle": "Kontakt",
+    "pageSubtitle": "Pronađite nas u srcu Trenčína",
+    "addressTitle": "Adresa",
+    "address1": "Námestie sv. Anny 3",
+    "address2": "911 01 Trenčín, Slovačka",
+    "phoneTitle": "Telefon",
+    "phone": "+421 949 551 553",
+    "hoursTitle": "Radno vrijeme",
+    "hours1": "Ponedjeljak – Petak: 11:00 – 22:00",
+    "hours2": "Subota: 11:00 – 23:00",
+    "hours3": "Nedjelja: 12:00 – 21:00",
+    "hoursNote": "Kuhinja zatvara 30 min. prije zatvaranja.",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "whatsapp": "WhatsApp",
+    "mapBtn": "Otvori u Google Maps"
   }
 }

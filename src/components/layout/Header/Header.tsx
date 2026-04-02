@@ -19,7 +19,6 @@ const NAV_HREFS: Record<string, string> = {
   home:    '/',
   about:   '#about',
   gallery: '#gallery',
-  contact: '#contact',
 };
 
 function BurgerIcon() {
@@ -64,8 +63,9 @@ export default function Header() {
   const pathname                = usePathname();
 
   function getHref(key: string): string {
-    if (key === 'menu') return `/${currentLocale}/menu`;
-    if (key === 'blog') return `/${currentLocale}/blog`;
+    if (key === 'menu')    return `/${currentLocale}/menu`;
+    if (key === 'blog')    return `/${currentLocale}/blog`;
+    if (key === 'contact') return `/${currentLocale}/contact`;
     return NAV_HREFS[key] ?? '/';
   }
 

@@ -6,6 +6,7 @@ import ReservationSection from '@/components/sections/ReservationSection/Reserva
 import CTASection         from '@/components/sections/CTASection/CTASection';
 import GallerySection     from '@/components/sections/GallerySection/GallerySection';
 import InstagramSection   from '@/components/sections/InstagramSection/InstagramSection';
+import ContactSection     from '@/components/sections/ContactSection/ContactSection';
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <CTASection />
       <GallerySection />
       <InstagramSection />
+      <ContactSection />
     </>
   );
 }

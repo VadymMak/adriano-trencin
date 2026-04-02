@@ -25,13 +25,19 @@
     "label": "Rezervace",
     "title": "Rezervujte si stůl",
     "fields": {
-      "name": "Jméno a příjmení", "namePlaceholder": "Jan Novák",
-      "phone": "Telefon", "phonePlaceholder": "+420 9XX XXX XXX",
-      "email": "Email", "emailPlaceholder": "vas@email.cz",
+      "name": "Jméno a příjmení",
+      "namePlaceholder": "Jan Novák",
+      "phone": "Telefon",
+      "phonePlaceholder": "+420 9XX XXX XXX",
+      "email": "Email",
+      "emailPlaceholder": "vas@email.cz",
       "date": "Datum",
-      "time": "Čas", "timePlaceholder": "Vyberte čas",
-      "guests": "Počet osob", "guestsPlaceholder": "Počet osob",
-      "message": "Zpráva / poznámka", "messagePlaceholder": "Zpráva (nepovinné)"
+      "time": "Čas",
+      "timePlaceholder": "Vyberte čas",
+      "guests": "Počet osob",
+      "guestsPlaceholder": "Počet osob",
+      "message": "Zpráva / poznámka",
+      "messagePlaceholder": "Zpráva (nepovinné)"
     },
     "submitBtn": "Rezervovat",
     "whatsappBtn": "WhatsApp",
@@ -52,28 +58,58 @@
     "groupText": "Pro skupiny 6+ osob a speciální události nás kontaktujte přímo na WhatsApp",
     "groupBtn": "Napsat na WhatsApp",
     "hours": "Otevírací hodiny",
-    "hoursRows": ["Pondělí – Pátek: 11:00 – 22:00", "Sobota: 11:00 – 23:00", "Neděle: 12:00 – 21:00"],
+    "hoursRows": [
+      "Pondělí – Pátek: 11:00 – 22:00",
+      "Sobota: 11:00 – 23:00",
+      "Neděle: 12:00 – 21:00"
+    ],
     "address": "Námestie sv. Anny 3, Trenčín",
     "phone2": "0949 551 553",
     "emailInfo": "adrianorestaurantcafe@gmail.com",
-    "guestOptions": ["1 osoba", "2 osoby", "3 osoby", "4 osoby", "5 osob", "6 osob", "7 osob", "8 osob", "9 osob", "10+ osob"]
+    "guestOptions": [
+      "1 osoba",
+      "2 osoby",
+      "3 osoby",
+      "4 osoby",
+      "5 osob",
+      "6 osob",
+      "7 osob",
+      "8 osob",
+      "9 osob",
+      "10+ osob"
+    ]
   },
   "about": {
     "label": "O nás",
     "title": "Chuť moře v srdci Trenčína",
     "text": "Adriano Restaurant & Cafe přináší autentickou středomořskou kuchyni s čerstvými mořskými plody, domácími těstovinami a víny přímo z Istrie a Chorvatska. Od roku 2015 jsme místem, kde se setkávají přátelé, rodiny a milovníci dobré kuchyně.",
-    "stat1Value": "2015", "stat1Label": "Rok otevření",
-    "stat2Value": "120",  "stat2Label": "Míst v restauraci",
-    "stat3Value": "5",    "stat3Label": "Zemí kuchyně"
+    "stat1Value": "2015",
+    "stat1Label": "Rok otevření",
+    "stat2Value": "120",
+    "stat2Label": "Míst v restauraci",
+    "stat3Value": "5",
+    "stat3Label": "Zemí kuchyně"
   },
   "reviews": {
     "label": "Recenze",
     "title": "Co říkají naši hosté",
     "items": [
-      { "text": "Fantastická chobotnice na grilu! Nejlepší restaurace v Trenčíně.", "author": "Mária K." },
-      { "text": "Bavette Fruti di Mare bylo dokonalé. Určitě přijdu znovu!", "author": "Peter S." },
-      { "text": "Skvělá obsluha, výborné víno z Istrie. Atmosféra jako v Chorvatsku.", "author": "Jana M." },
-      { "text": "Humr byl čerstvý a perfektně připravený. Doporučuji všem!", "author": "Tomáš B." }
+      {
+        "text": "Fantastická chobotnice na grilu! Nejlepší restaurace v Trenčíně.",
+        "author": "Mária K."
+      },
+      {
+        "text": "Bavette Fruti di Mare bylo dokonalé. Určitě přijdu znovu!",
+        "author": "Peter S."
+      },
+      {
+        "text": "Skvělá obsluha, výborné víno z Istrie. Atmosféra jako v Chorvatsku.",
+        "author": "Jana M."
+      },
+      {
+        "text": "Humr byl čerstvý a perfektně připravený. Doporučuji všem!",
+        "author": "Tomáš B."
+      }
     ]
   },
   "featured": {
@@ -82,14 +118,38 @@
     "subtitle": "Oblíbená jídla našich hostů",
     "order": "Objednat",
     "dishes": {
-      "chobotnica":    { "name": "Chobotnice na grilu",         "desc": "Grilovaná chobotnice s citronem a olivovým olejem" },
-      "bavette-fruti": { "name": "Bavette Fruti di Mare",        "desc": "Čerstvé mořské plody, česnek, cherry rajčata" },
-      "homar":         { "name": "Humr s přílohou",              "desc": "Čerstvý humr grilovaný na másle" },
-      "tuna":          { "name": "Steak z tuňáka",               "desc": "Tuňák na grilu se zeleninou" },
-      "paella":        { "name": "Paella plody moře",            "desc": "Krevety, sépia, slávky, chobotnice" },
-      "bavette-adriano": { "name": "Bavette ADRIANO",            "desc": "Krevety a pistáciové pesto" },
-      "pizza-adriano": { "name": "Pizza Adriano",                "desc": "Rukola, krevety, rajčatová omáčka" },
-      "fuzi":          { "name": "Fuži s černým lanýžem",        "desc": "Istrské fuži, černý lanýž, smetana" }
+      "chobotnica": {
+        "name": "Chobotnice na grilu",
+        "desc": "Grilovaná chobotnice s citronem a olivovým olejem"
+      },
+      "bavette-fruti": {
+        "name": "Bavette Fruti di Mare",
+        "desc": "Čerstvé mořské plody, česnek, cherry rajčata"
+      },
+      "homar": {
+        "name": "Humr s přílohou",
+        "desc": "Čerstvý humr grilovaný na másle"
+      },
+      "tuna": {
+        "name": "Steak z tuňáka",
+        "desc": "Tuňák na grilu se zeleninou"
+      },
+      "paella": {
+        "name": "Paella plody moře",
+        "desc": "Krevety, sépia, slávky, chobotnice"
+      },
+      "bavette-adriano": {
+        "name": "Bavette ADRIANO",
+        "desc": "Krevety a pistáciové pesto"
+      },
+      "pizza-adriano": {
+        "name": "Pizza Adriano",
+        "desc": "Rukola, krevety, rajčatová omáčka"
+      },
+      "fuzi": {
+        "name": "Fuži s černým lanýžem",
+        "desc": "Istrské fuži, černý lanýž, smetana"
+      }
     }
   },
   "menu": {
@@ -98,17 +158,17 @@
     "allergensTitle": "Alergeny",
     "allergensList": "1 – Lepek · 2 – Korýši · 3 – Vejce · 4 – Ryby · 7 – Mléko · 8 – Ořechy · 14 – Měkkýši",
     "categories": {
-      "all":         "Vše",
-      "predjedla":   "Předkrmy",
-      "cestoviny":   "Těstoviny",
-      "pizza":       "Pizza",
-      "ryby":        "Ryby & mořské plody",
-      "jedla-vopred":"Na objednání",
-      "maso":        "Maso",
-      "prilohy":     "Přílohy",
-      "salaty":      "Saláty",
-      "dezerty":     "Dezerty",
-      "napoje":      "Nápoje"
+      "all": "Vše",
+      "predjedla": "Předkrmy",
+      "cestoviny": "Těstoviny",
+      "pizza": "Pizza",
+      "ryby": "Ryby & mořské plody",
+      "jedla-vopred": "Na objednání",
+      "maso": "Maso",
+      "prilohy": "Přílohy",
+      "salaty": "Saláty",
+      "dezerty": "Dezerty",
+      "napoje": "Nápoje"
     }
   },
   "cta": {
@@ -121,10 +181,18 @@
     "label": "Galerie",
     "title": "Atmosféra & jídla",
     "items": [
-      "Atmosféra restaurace", "Chobotnice na grilu", "Bavette Fruti di Mare",
-      "Večerní atmosféra", "Steak z tuňáka", "Paella plody moře",
-      "Bar & vína", "Humr s přílohou", "Pizza Adriano",
-      "Letní terasa", "Dezerty", "Víno z Istrie"
+      "Atmosféra restaurace",
+      "Chobotnice na grilu",
+      "Bavette Fruti di Mare",
+      "Večerní atmosféra",
+      "Steak z tuňáka",
+      "Paella plody moře",
+      "Bar & vína",
+      "Humr s přílohou",
+      "Pizza Adriano",
+      "Letní terasa",
+      "Dezerty",
+      "Víno z Istrie"
     ]
   },
   "instagram": {
@@ -136,5 +204,25 @@
   "meta": {
     "title": "Adriano – Restaurace & Cafe Trenčín",
     "description": "Středomořská kuchyně, mořské plody a vína v srdci Trenčína."
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Najdete nás v srdci Trenčína",
+    "pageTitle": "Kontakt",
+    "pageSubtitle": "Najdete nás v srdci Trenčína",
+    "addressTitle": "Adresa",
+    "address1": "Námestie sv. Anny 3",
+    "address2": "911 01 Trenčín, Slovensko",
+    "phoneTitle": "Telefon",
+    "phone": "+421 949 551 553",
+    "hoursTitle": "Otevírací hodiny",
+    "hours1": "Pondělí – Pátek: 11:00 – 22:00",
+    "hours2": "Sobota: 11:00 – 23:00",
+    "hours3": "Neděle: 12:00 – 21:00",
+    "hoursNote": "Kuchyně zavírá 30 min. před koncem.",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "whatsapp": "WhatsApp",
+    "mapBtn": "Otevřít v Google Maps"
   }
 }
