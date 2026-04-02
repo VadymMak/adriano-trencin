@@ -21,6 +21,24 @@
     "ctaReservation": "Book a table",
     "ctaMenu": "View menu"
   },
+  "about": {
+    "label": "About us",
+    "title": "The taste of the sea in the heart of Trenčín",
+    "text": "Adriano Restaurant & Cafe brings authentic Mediterranean cuisine with fresh seafood, homemade pasta and wines directly from Istria and Croatia. Since 2015 we have been a place where friends, families and lovers of good food come together.",
+    "stat1Value": "2015", "stat1Label": "Year opened",
+    "stat2Value": "120",  "stat2Label": "Restaurant seats",
+    "stat3Value": "5",    "stat3Label": "Cuisine countries"
+  },
+  "reviews": {
+    "label": "Reviews",
+    "title": "What our guests say",
+    "items": [
+      { "text": "Fantastic grilled octopus! Best restaurant in Trenčín.", "author": "Mária K." },
+      { "text": "Bavette Fruti di Mare was perfect. I will definitely come back!", "author": "Peter S." },
+      { "text": "Great service, excellent wine from Istria. Atmosphere like in Croatia.", "author": "Jana M." },
+      { "text": "The lobster was fresh and perfectly prepared. I recommend it to everyone!", "author": "Tomáš B." }
+    ]
+  },
   "featured": {
     "label": "Chef's Choice",
     "title": "Our Specialities",

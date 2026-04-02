@@ -21,6 +21,24 @@
     "ctaReservation": "Rezervirajte stol",
     "ctaMenu": "Pogledajte jelovnik"
   },
+  "about": {
+    "label": "O nama",
+    "title": "Okus mora u srcu Trenčína",
+    "text": "Adriano Restaurant & Cafe donosi autentičnu mediteransku kuhinju s svježim plodovima mora, domaćim tjesteninama i vinima izravno iz Istre i Hrvatske. Od 2015. godine smo mjesto gdje se susreću prijatelji, obitelji i ljubitelji dobre kuhinje.",
+    "stat1Value": "2015", "stat1Label": "Godina otvaranja",
+    "stat2Value": "120",  "stat2Label": "Mjesta u restoranu",
+    "stat3Value": "5",    "stat3Label": "Zemalja kuhinje"
+  },
+  "reviews": {
+    "label": "Recenzije",
+    "title": "Što kažu naši gosti",
+    "items": [
+      { "text": "Fantastična hobotnica na žaru! Najbolji restoran u Trenčínu.", "author": "Mária K." },
+      { "text": "Bavette Fruti di Mare je bilo savršeno. Svakako ću doći opet!", "author": "Peter S." },
+      { "text": "Izvrsna usluga, odlično vino iz Istre. Atmosfera kao u Hrvatskoj.", "author": "Jana M." },
+      { "text": "Jastog je bio svjež i savršeno pripremljen. Preporučujem svima!", "author": "Tomáš B." }
+    ]
+  },
   "featured": {
     "label": "Preporučujemo",
     "title": "Naše specijalitete",

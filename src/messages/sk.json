@@ -21,6 +21,24 @@
     "ctaReservation": "Rezervovať stôl",
     "ctaMenu": "Zobraziť menu"
   },
+  "about": {
+    "label": "O nás",
+    "title": "Chuť mora v srdci Trenčína",
+    "text": "Adriano Restaurant & Cafe prináša autentickú stredomorskú kuchyňu s čerstvými morskými plodmi, domácimi cestovinami a vínami priamo z Istrie a Chorvátska. Od roku 2015 sme miestom kde sa stretávajú priatelia, rodiny a milovníci dobrej kuchyne.",
+    "stat1Value": "2015", "stat1Label": "Rok otvorenia",
+    "stat2Value": "120",  "stat2Label": "Miest v reštaurácii",
+    "stat3Value": "5",    "stat3Label": "Krajín kuchyne"
+  },
+  "reviews": {
+    "label": "Recenzie",
+    "title": "Čo hovoria naši hostia",
+    "items": [
+      { "text": "Fantastická chobotnica na grile! Najlepšia reštaurácia v Trenčíne.", "author": "Mária K." },
+      { "text": "Bavette Fruti di Mare bolo dokonalé. Prídem určite znova!", "author": "Peter S." },
+      { "text": "Skvelá obsluha, výborné víno z Istrie. Atmosféra ako v Chorvátsku.", "author": "Jana M." },
+      { "text": "Homár bol čerstvý a perfektne pripravený. Odporúčam všetkým!", "author": "Tomáš B." }
+    ]
+  },
   "featured": {
     "label": "Odporúčame",
     "title": "Naše špeciality",
