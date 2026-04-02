@@ -1,19 +1,17 @@
 /* ─── Header ───────────────────────────────────────────────────────────────── */
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(201, 163, 71, 0.15);
   transform: translateY(0);
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.headerHidden {
-  transform: translateY(-100%);
+  transition: transform 0.3s ease;
 }
 
 .inner {

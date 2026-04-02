@@ -62,63 +62,55 @@ function ChevronIcon() {
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [hidden, setHidden]     = useState(false);
-  const lastScrollY             = useRef(0);
-  const ticking                 = useRef(false);
+  const headerRef               = useRef<HTMLElement>(null);
   const t                       = useTranslations('nav');
-  const currentLocale             = useLocale();
+  const currentLocale           = useLocale();
+  const router                  = useRouter();
+  const pathname                = usePathname();
 
   function getHref(key: string): string {
     if (key === 'menu') return `/${currentLocale}/menu`;
     if (key === 'blog') return `/${currentLocale}/blog`;
     return NAV_HREFS[key] ?? '/';
   }
-  const router                    = useRouter();
-  const pathname                  = usePathname();
 
+  // Direct DOM manipulation — most reliable across desktop + mobile
   useEffect(() => {
-    const handleScroll = () => {
-      if (ticking.current) return;
-      ticking.current = true;
-      window.requestAnimationFrame(() => {
-        const currentScrollY = window.scrollY;
+    const el = headerRef.current;
+    if (!el) return;
 
-        if (currentScrollY < 10) {
-          setHidden(false);
-        } else if (currentScrollY < lastScrollY.current - 5) {
-          setHidden(false);
-        } else if (currentScrollY > lastScrollY.current + 5) {
-          if (!window.__programmaticScroll) {
-            setHidden(true);
-          }
-        }
+    let lastY = window.scrollY;
 
-        lastScrollY.current = currentScrollY;
-        ticking.current = false;
-      });
+    const show = () => {
+      el.style.transform = 'translateY(0)';
+      document.documentElement.style.setProperty('--sticky-offset', `${el.offsetHeight}px`);
+    };
+    const hide = () => {
+      el.style.transform = 'translateY(-100%)';
+      document.documentElement.style.setProperty('--sticky-offset', '0px');
     };
 
-    const onProgrammaticEnd = () => { lastScrollY.current = window.scrollY; };
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (y <= 0) {
+        show();
+      } else if (y < lastY) {
+        show();
+      } else if (y > lastY && !window.__programmaticScroll) {
+        hide();
+      }
+      lastY = y;
+    };
 
-    window.addEventListener('scroll',    handleScroll, { passive: true });
-    window.addEventListener('touchmove', handleScroll, { passive: true });
+    const onProgrammaticEnd = () => { lastY = window.scrollY; };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('programmatic-scroll-end', onProgrammaticEnd);
     return () => {
-      window.removeEventListener('scroll',    handleScroll);
-      window.removeEventListener('touchmove', handleScroll);
+      window.removeEventListener('scroll', onScroll);
       window.removeEventListener('programmatic-scroll-end', onProgrammaticEnd);
     };
   }, []);
-
-  // Keep --sticky-offset CSS var in sync with header visibility
-  useEffect(() => {
-    const headerEl = document.querySelector('header');
-    const h = headerEl?.offsetHeight ?? 64;
-    document.documentElement.style.setProperty(
-      '--sticky-offset',
-      hidden ? '0px' : `${h}px`
-    );
-  }, [hidden]);
 
   // Close dropdowns on outside click
   useEffect(() => {
@@ -136,7 +128,7 @@ export default function Header() {
   }, [pathname, router]);
 
   return (
-    <header className={`${styles.header} ${hidden ? styles.headerHidden : ''}`}>
+    <header ref={headerRef} className={styles.header}>
       <div className={styles.inner}>
 
         {/* Logo */}
