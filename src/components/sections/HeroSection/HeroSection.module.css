@@ -1,18 +1,17 @@
+/* ─── Hero wrapper ─────────────────────────────────────────────────────────── */
+
 .hero {
   position: relative;
   background-color: #0a0a0a;
   background-repeat: no-repeat;
-  padding: 56px 24px 48px;
-  text-align: center;
   border-bottom: 1px solid #c9a347;
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 60% 40%;
   align-items: center;
-  justify-content: center;
 }
 
-/* Overlay поверх фонового изображения */
+/* Overlay поверх фото */
 .hero::before {
   content: '';
   position: absolute;
@@ -22,12 +21,19 @@
   z-index: 0;
 }
 
-.hero > * {
+/* ─── Левая колонка ────────────────────────────────────────────────────────── */
+
+.left {
   position: relative;
   z-index: 1;
+  padding: 56px 40px 48px 48px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Badge */
 .badge {
   display: block;
   font-size: 11px;
@@ -37,18 +43,17 @@
   margin-bottom: 20px;
 }
 
-/* Logo */
 .logo {
-  font-size: clamp(32px, 8vw, 52px);
+  font-size: clamp(28px, 5vw, 52px);
   font-weight: 700;
   color: #ffffff;
-  letter-spacing: clamp(6px, 2vw, 12px);
+  letter-spacing: clamp(5px, 1.5vw, 12px);
   text-transform: uppercase;
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(8px, 2vw, 16px);
+  gap: clamp(6px, 1.5vw, 16px);
   margin-bottom: 10px;
 }
 
@@ -58,16 +63,13 @@
   letter-spacing: 0;
 }
 
-/* Subtitle */
 .subtitle {
   font-size: 14px;
   color: #4a7fa5;
   letter-spacing: 2px;
   font-style: italic;
-  margin-bottom: 0;
 }
 
-/* Divider */
 .divider {
   width: 60px;
   height: 1px;
@@ -76,17 +78,15 @@
   flex-shrink: 0;
 }
 
-/* Tagline */
 .tagline {
   font-size: 13px;
   color: #666;
   letter-spacing: 1px;
   line-height: 1.6;
   margin-bottom: 32px;
-  padding: 0 16px;
+  padding: 0 8px;
 }
 
-/* Buttons */
 .buttons {
   display: flex;
   gap: 12px;
@@ -141,7 +141,100 @@
   transform: scale(0.97);
 }
 
-/* WhatsApp fixed button */
+/* ─── Правая колонка — бесконечный скролл ─────────────────────────────────── */
+
+.right {
+  position: relative;
+  z-index: 1;
+  height: 100svh;
+  overflow: hidden;
+  border-left: 1px solid rgba(201, 163, 71, 0.2);
+
+  /* Плавное исчезновение сверху и снизу */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+}
+
+.scrollTrack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 24px 24px 28px;
+  animation: scrollUp 24s linear infinite;
+  will-change: transform;
+}
+
+.scrollTrack:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollUp {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* Карточка блюда */
+.card {
+  background: rgba(0, 0, 0, 0.72);
+  border: 1px solid rgba(201, 163, 71, 0.18);
+  border-radius: 4px;
+  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 4px 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.card:hover {
+  border-color: rgba(201, 163, 71, 0.5);
+}
+
+.cardCategory {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #4a7fa5;
+}
+
+.cardName {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: 13px;
+  font-weight: 500;
+  color: #c9a347;
+  line-height: 1.3;
+}
+
+.cardPrice {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #c9a347;
+  white-space: nowrap;
+}
+
+/* ─── WhatsApp ─────────────────────────────────────────────────────────────── */
+
 .whatsapp {
   position: fixed;
   bottom: 24px;
@@ -174,25 +267,41 @@
   height: 26px;
 }
 
-/* Tablet */
-@media (min-width: 640px) {
+/* ─── Мобильный: правая колонка скрывается ─────────────────────────────────── */
+
+@media (max-width: 767px) {
   .hero {
-    padding: 72px 48px 64px;
+    grid-template-columns: 1fr;
   }
 
-  .tagline {
-    font-size: 14px;
+  .left {
+    padding: 56px 24px 48px;
+    min-height: 100svh;
+    justify-content: center;
   }
 
-  .buttons {
-    flex-wrap: nowrap;
+  .right {
+    display: none;
   }
 }
 
-/* Desktop */
+/* ─── Планшет ──────────────────────────────────────────────────────────────── */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .left {
+    padding: 56px 28px 48px 36px;
+  }
+
+  .scrollTrack {
+    padding: 24px 16px 24px 20px;
+  }
+}
+
+/* ─── Десктоп ──────────────────────────────────────────────────────────────── */
+
 @media (min-width: 1024px) {
-  .hero {
-    padding: 96px 64px 80px;
+  .left {
+    padding: 96px 48px 80px 64px;
   }
 
   .badge {

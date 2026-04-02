@@ -3,6 +3,17 @@
 import { useTranslations } from 'next-intl';
 import styles from './HeroSection.module.css';
 
+const MENU_ITEMS = [
+  { name: 'Bavette Fruti di Mare', price: '14,90€', category: 'Cestoviny' },
+  { name: 'Chobotnica na grile',   price: '29,90€', category: 'Morské plody' },
+  { name: 'Steak z tuniaka',       price: '22,00€', category: 'Ryby' },
+  { name: 'Paella plody mora',     price: '50,00€', category: 'Špeciality' },
+  { name: 'Homár s prílohou',      price: '100€',   category: 'Špeciality' },
+  { name: 'Krevety na grile',      price: '19,00€', category: 'Morské plody' },
+  { name: 'Bavette ADRIANO',       price: '15,50€', category: 'Cestoviny' },
+  { name: 'Pizza Adriano',         price: '12,00€', category: 'Pizza' },
+];
+
 export default function HeroSection() {
   const t = useTranslations('hero');
 
@@ -16,23 +27,39 @@ export default function HeroSection() {
           backgroundPosition: 'center',
         }}
       >
-        <span className={styles.badge}>{t('badge')}</span>
+        {/* Левая колонка */}
+        <div className={styles.left}>
+          <span className={styles.badge}>{t('badge')}</span>
 
-        <h1 className={styles.logo}>
-          <span className={styles.dash}>—</span>
-          {t('title')}
-          <span className={styles.dash}>—</span>
-        </h1>
+          <h1 className={styles.logo}>
+            <span className={styles.dash}>—</span>
+            {t('title')}
+            <span className={styles.dash}>—</span>
+          </h1>
 
-        <p className={styles.subtitle}>{t('subtitle')}</p>
+          <p className={styles.subtitle}>{t('subtitle')}</p>
 
-        <div className={styles.divider} />
+          <div className={styles.divider} />
 
-        <p className={styles.tagline}>{t('tagline')}</p>
+          <p className={styles.tagline}>{t('tagline')}</p>
 
-        <div className={styles.buttons}>
-          <button className={styles.btnGold}>{t('ctaReservation')}</button>
-          <button className={styles.btnOutline}>{t('ctaMenu')}</button>
+          <div className={styles.buttons}>
+            <button className={styles.btnGold}>{t('ctaReservation')}</button>
+            <button className={styles.btnOutline}>{t('ctaMenu')}</button>
+          </div>
+        </div>
+
+        {/* Правая колонка — бесконечный скролл */}
+        <div className={styles.right}>
+          <div className={styles.scrollTrack}>
+            {[...MENU_ITEMS, ...MENU_ITEMS].map((item, i) => (
+              <div key={i} className={styles.card}>
+                <span className={styles.cardCategory}>{item.category}</span>
+                <span className={styles.cardName}>{item.name}</span>
+                <span className={styles.cardPrice}>{item.price}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
