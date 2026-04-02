@@ -1,21 +1,55 @@
 'use client';
 
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import styles from './HeroSection.module.css';
 
-const MENU_ITEMS = [
-  { name: 'Bavette Fruti di Mare', price: '14,90€', category: 'Cestoviny' },
-  { name: 'Chobotnica na grile',   price: '29,90€', category: 'Morské plody' },
-  { name: 'Steak z tuniaka',       price: '22,00€', category: 'Ryby' },
-  { name: 'Paella plody mora',     price: '50,00€', category: 'Špeciality' },
-  { name: 'Homár s prílohou',      price: '100€',   category: 'Špeciality' },
-  { name: 'Krevety na grile',      price: '19,00€', category: 'Morské plody' },
-  { name: 'Bavette ADRIANO',       price: '15,50€', category: 'Cestoviny' },
-  { name: 'Pizza Adriano',         price: '12,00€', category: 'Pizza' },
-];
+const CATEGORIES = ['Predjedlá', 'Cestoviny', 'Pizza', 'Ryby', 'Mäso', 'Nápoje'] as const;
+
+type Category = (typeof CATEGORIES)[number];
+
+const MENU: Record<Category, { name: string; price: string }[]> = {
+  Predjedlá: [
+    { name: 'Chobotnicový šalát', price: '12,90€' },
+    { name: 'Krevety na grile',   price: '19,00€' },
+    { name: 'Slávky na víne',     price: '13,50€' },
+    { name: 'Carpaccio',          price: '14,50€' },
+  ],
+  Cestoviny: [
+    { name: 'Bavette Fruti di Mare',       price: '14,90€' },
+    { name: 'Bavette ADRIANO',             price: '15,50€' },
+    { name: 'Fuži s čiernou hľuzovkou',    price: '18,90€' },
+    { name: 'Sépiové linguine',            price: '15,50€' },
+  ],
+  Pizza: [
+    { name: 'Adriano',             price: '12,00€' },
+    { name: 'Mortadella burrata',  price: '15,00€' },
+    { name: 'Tartuffi',            price: '14,00€' },
+    { name: 'Diavola',             price: '11,00€' },
+  ],
+  Ryby: [
+    { name: 'Steak z tuniaka',    price: '22,00€' },
+    { name: 'Chobotnica na grile', price: '29,90€' },
+    { name: 'Paella plody mora',   price: '50,00€' },
+    { name: 'Homár',               price: '100€' },
+  ],
+  Mäso: [
+    { name: 'Beefsteak s hľuzovkou', price: '25,00€' },
+    { name: 'Rumpsteak Tagliata',    price: '17,00€' },
+    { name: 'Kurací steak',          price: '9,50€' },
+    { name: 'Beefsteak na grile',    price: '23,50€' },
+  ],
+  Nápoje: [
+    { name: 'Aperol Spritz',       price: '5,00€' },
+    { name: 'Gin Tonic',           price: '6,00€' },
+    { name: 'Istarska Malvazia',   price: '25,00€' },
+    { name: 'Rosse',               price: '25,00€' },
+  ],
+};
 
 export default function HeroSection() {
   const t = useTranslations('hero');
+  const [active, setActive] = useState<Category>('Predjedlá');
 
   return (
     <>
@@ -49,12 +83,26 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Правая колонка — бесконечный скролл */}
+        {/* Правая колонка — переключатель категорий */}
         <div className={styles.right}>
-          <div className={styles.scrollTrack}>
-            {[...MENU_ITEMS, ...MENU_ITEMS].map((item, i) => (
-              <div key={i} className={styles.card}>
-                <span className={styles.cardCategory}>{item.category}</span>
+          {/* Категории */}
+          <div className={styles.cats}>
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                className={`${styles.catPill} ${active === cat ? styles.catPillActive : ''}`}
+                onClick={() => setActive(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* Карточки — key вызывает re-mount и CSS-анимацию */}
+          <div key={active} className={styles.cards}>
+            {MENU[active].map((item) => (
+              <div key={item.name} className={styles.card}>
+                <span className={styles.cardCategory}>{active}</span>
                 <span className={styles.cardName}>{item.name}</span>
                 <span className={styles.cardPrice}>{item.price}</span>
               </div>
