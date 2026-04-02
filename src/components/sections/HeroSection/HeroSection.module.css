@@ -1,19 +1,6 @@
-/*
-  Чтобы добавить фоновое фото, установи в globals.css:
-  :root { --hero-bg-image: url('/images/hero.jpg'); }
-  Overlay rgba(0,0,0,0.65) применяется автоматически поверх фото.
-  Без фото — фон остаётся чистым #0a0a0a.
-*/
-:root {
-  --hero-bg-image: none;
-}
-
 .hero {
   position: relative;
   background-color: #0a0a0a;
-  background-image: var(--hero-bg-image);
-  background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
   padding: 56px 24px 48px;
   text-align: center;

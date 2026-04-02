@@ -5,8 +5,6 @@
   --color-accent-dark: #a8894e;
   --color-muted: #6b6b6b;
   --color-border: #e0e0d8;
-  --hero-bg-image: url("/images/hero.jpg");
-
   --font-primary: var(--font-geist), Arial, Helvetica, sans-serif;
 
   --spacing-xs: 0.5rem;
