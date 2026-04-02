@@ -17,7 +17,6 @@ const LOCALE_OPTIONS = [
 const NAV_KEYS = ['home', 'menu', 'about', 'gallery', 'blog', 'contact'] as const;
 const NAV_HREFS: Record<string, string> = {
   home:    '/',
-  about:   '#about',
   gallery: '#gallery',
 };
 
@@ -64,6 +63,7 @@ export default function Header() {
 
   function getHref(key: string): string {
     if (key === 'menu')    return `/${currentLocale}/menu`;
+    if (key === 'about')   return `/${currentLocale}/about`;
     if (key === 'blog')    return `/${currentLocale}/blog`;
     if (key === 'contact') return `/${currentLocale}/contact`;
     return NAV_HREFS[key] ?? '/';

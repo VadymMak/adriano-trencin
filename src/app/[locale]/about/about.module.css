@@ -1,0 +1,339 @@
+/* ─── Hero ─── */
+
+.hero {
+  position: relative;
+  background: var(--color-bg-primary) url('/images/about.jpg') center / cover no-repeat;
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.heroInner {
+  position: relative;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.heroLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ocean-label);
+  margin-bottom: 14px;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  color: var(--color-gold);
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.heroSubtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.04em;
+}
+
+/* ─── Common ─── */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Section 1: Story ─── */
+
+.story {
+  background: var(--color-bg-primary);
+  padding: 80px 0;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.storyLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ocean-label);
+  margin-bottom: 12px;
+}
+
+.storyTitle {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 300;
+  color: var(--color-gold);
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.storyDivider {
+  width: 40px;
+  height: 1px;
+  background: var(--color-gold);
+  margin-bottom: 28px;
+}
+
+.storyText {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+
+.storyText:last-child {
+  margin-bottom: 0;
+}
+
+.storyPhoto {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--border-radius-md);
+  background: var(--color-bg-tertiary) url('/images/about-story.jpg') center / cover no-repeat;
+  border: 0.5px solid var(--color-border);
+}
+
+/* ─── Section 2: Stats ─── */
+
+.stats {
+  background: var(--color-bg-secondary);
+  padding: 64px 0;
+  border-top: 0.5px solid var(--color-border);
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.statsTitle {
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 40px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statValue {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--color-gold);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* ─── Section 3: Cuisine ─── */
+
+.cuisine {
+  background: var(--color-bg-primary);
+  padding: 80px 0;
+}
+
+.cuisineHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.cuisineLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ocean-label);
+  margin-bottom: 12px;
+}
+
+.cuisineTitle {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 300;
+  color: var(--color-gold);
+  letter-spacing: 0.04em;
+}
+
+.cuisineCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.cuisineCard {
+  background: var(--color-bg-card);
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 32px 28px;
+  transition: border-color var(--transition);
+}
+
+.cuisineCard:hover {
+  border-color: var(--color-border-hover);
+}
+
+.cuisineIcon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.cuisineCardTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-gold);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.cuisineCardText {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+/* ─── Section 4: Team ─── */
+
+.team {
+  background: var(--color-bg-secondary);
+  border-top: 0.5px solid var(--color-border);
+  padding: 80px 0;
+}
+
+.teamHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.teamLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ocean-label);
+  margin-bottom: 12px;
+}
+
+.teamTitle {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 300;
+  color: var(--color-gold);
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+.teamText {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.teamPhoto {
+  height: 320px;
+  border-radius: var(--border-radius-md);
+  background: var(--color-bg-tertiary);
+  border: 0.5px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teamPhotoPlaceholder {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+/* ─── CTA ─── */
+
+.cta {
+  background: var(--color-bg-primary);
+  border-top: 1px solid var(--color-gold);
+  border-bottom: 1px solid var(--color-gold);
+  padding: 64px 0;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 300;
+  color: var(--color-text-primary);
+  letter-spacing: 0.04em;
+  margin-bottom: 28px;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-gold);
+  color: var(--color-bg-primary);
+  border-radius: var(--border-radius);
+  padding: 14px 36px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background var(--transition);
+}
+
+.ctaBtn:hover {
+  background: var(--color-gold-hover);
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 900px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .storyPhoto {
+    aspect-ratio: 16 / 9;
+    order: -1;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .cuisineCards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
