@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Domů",
+    "menu": "Jídelní lístek",
+    "about": "O nás",
+    "gallery": "Galerie",
+    "contact": "Kontakt",
+    "reservation": "Rezervace"
+  },
+  "hero": {
+    "title": "Adriano Trenčín",
+    "subtitle": "Italská restaurace v srdci Trenčína",
+    "cta": "Rezervovat stůl"
+  },
+  "meta": {
+    "title": "Adriano – Italská restaurace Trenčín",
+    "description": "Autentická italská kuchyně v Trenčíně. Pizzy, těstoviny, vína."
+  }
+}

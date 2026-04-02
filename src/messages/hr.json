@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Početna",
+    "menu": "Jelovnik",
+    "about": "O nama",
+    "gallery": "Galerija",
+    "contact": "Kontakt",
+    "reservation": "Rezervacija"
+  },
+  "hero": {
+    "title": "Adriano Trenčín",
+    "subtitle": "Talijanski restoran u srcu Trenčína",
+    "cta": "Rezervirajte stol"
+  },
+  "meta": {
+    "title": "Adriano – Talijanski restoran Trenčín",
+    "description": "Autentična talijanska kuhinja u Trenčínu. Pizza, tjestenina, vina."
+  }
+}

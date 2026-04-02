@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "menu": "Speisekarte",
+    "about": "Über uns",
+    "gallery": "Galerie",
+    "contact": "Kontakt",
+    "reservation": "Reservierung"
+  },
+  "hero": {
+    "title": "Adriano Trenčín",
+    "subtitle": "Italienisches Restaurant im Herzen von Trenčín",
+    "cta": "Tisch reservieren"
+  },
+  "meta": {
+    "title": "Adriano – Italienisches Restaurant Trenčín",
+    "description": "Authentische italienische Küche in Trenčín. Pizza, Pasta, Weine."
+  }
+}
