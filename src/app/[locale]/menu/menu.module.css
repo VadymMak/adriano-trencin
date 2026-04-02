@@ -2,7 +2,7 @@
 
 .filterBar {
   position: sticky;
-  top: 0;
+  top: 64px;
   z-index: 100;
   background: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(10px);
