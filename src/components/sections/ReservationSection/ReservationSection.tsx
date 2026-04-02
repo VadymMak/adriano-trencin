@@ -27,8 +27,8 @@ export default function ReservationSection() {
   const [success, setSuccess] = useState(false);
   const [whatsappUrl, setWhatsappUrl] = useState('');
 
-  const guestOptions: string[] = t.raw('guestOptions') as string[];
-  const hoursRows: string[] = t.raw('hoursRows') as string[];
+  const GUEST_INDICES = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as const;
+  const HOURS_INDICES = [0, 1, 2] as const;
 
   function validate(): boolean {
     const next: Partial<Record<keyof FormData, boolean>> = {};
@@ -157,8 +157,8 @@ export default function ReservationSection() {
                   <label>{f.guests}</label>
                   <select value={form.guests} onChange={e => change('guests', e.target.value)}>
                     <option value="" disabled>—</option>
-                    {guestOptions.map((opt, i) => (
-                      <option key={i} value={opt}>{opt}</option>
+                    {GUEST_INDICES.map((i) => (
+                      <option key={i} value={t(`guestOptions.${i}`)}>{t(`guestOptions.${i}`)}</option>
                     ))}
                   </select>
                 </div>
@@ -196,8 +196,8 @@ export default function ReservationSection() {
           <div className={styles.info}>
             <div className={styles.infoBlock}>
               <h3>{t('hours')}</h3>
-              {hoursRows.map((row, i) => (
-                <p key={i}>{row}</p>
+              {HOURS_INDICES.map((i) => (
+                <p key={i}>{t(`hoursRows.${i}`)}</p>
               ))}
             </div>
 
