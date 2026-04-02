@@ -92,6 +92,12 @@
       "fuzi":          { "name": "Fuži s čiernou hľuzovkou",   "desc": "Istrské fuži, čierna hľuzovka, smotana" }
     }
   },
+  "cta": {
+    "title": "Rezervujte si stôl ešte dnes",
+    "subtitle": "Potvrdenie do 2 hodín · WhatsApp & Email",
+    "reserveBtn": "Rezervovať stôl",
+    "whatsappBtn": "Napísať na WhatsApp"
+  },
   "gallery": {
     "label": "Galéria",
     "title": "Atmosféra & jedlá",

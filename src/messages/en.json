@@ -92,6 +92,12 @@
       "fuzi":          { "name": "Fuži with black truffle",        "desc": "Istrian fuži, black truffle, cream" }
     }
   },
+  "cta": {
+    "title": "Book your table today",
+    "subtitle": "Confirmation within 2 hours · WhatsApp & Email",
+    "reserveBtn": "Book a table",
+    "whatsappBtn": "Message on WhatsApp"
+  },
   "gallery": {
     "label": "Gallery",
     "title": "Atmosphere & food",

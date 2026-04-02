@@ -92,6 +92,12 @@
       "fuzi":          { "name": "Fuži mit schwarzem Trüffel",    "desc": "Istrische Fuži, schwarzer Trüffel, Sahne" }
     }
   },
+  "cta": {
+    "title": "Reservieren Sie noch heute",
+    "subtitle": "Bestätigung innerhalb von 2 Stunden · WhatsApp & E-Mail",
+    "reserveBtn": "Tisch reservieren",
+    "whatsappBtn": "WhatsApp schreiben"
+  },
   "gallery": {
     "label": "Galerie",
     "title": "Atmosphäre & Speisen",
