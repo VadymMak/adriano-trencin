@@ -29,9 +29,9 @@
       "phone": "Telefón", "phonePlaceholder": "+421 9XX XXX XXX",
       "email": "Email", "emailPlaceholder": "vas@email.sk",
       "date": "Dátum",
-      "time": "Čas",
-      "guests": "Počet osôb",
-      "message": "Správa / poznámka", "messagePlaceholder": "Narodeninová oslava, alergény..."
+      "time": "Čas", "timePlaceholder": "Vyberte čas",
+      "guests": "Počet osôb", "guestsPlaceholder": "Počet osôb",
+      "message": "Správa / poznámka", "messagePlaceholder": "Správa (nepovinné)"
     },
     "submitBtn": "Rezervovať",
     "whatsappBtn": "WhatsApp",

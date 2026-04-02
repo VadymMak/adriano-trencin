@@ -73,8 +73,6 @@ export default function ReservationSection() {
     return `https://wa.me/421949551553?text=${text}`;
   }
 
-  const f = t('fields') as unknown as Record<string, string>;
-
   return (
     <section className={styles.section} id="reservation">
       <div className={styles.container}>
@@ -104,39 +102,38 @@ export default function ReservationSection() {
               <form className={styles.form} onSubmit={handleSubmit} noValidate>
                 <div className={styles.row}>
                   <div className={errors.name ? `${styles.field} ${styles.fieldError}` : styles.field}>
-                    <label>{f.name}</label>
+                    <label>{t('fields.name')}</label>
                     <input
                       type="text"
-                      placeholder={f.namePlaceholder}
+                      placeholder={t('fields.namePlaceholder')}
                       value={form.name}
                       onChange={e => change('name', e.target.value)}
                     />
                   </div>
                   <div className={errors.phone ? `${styles.field} ${styles.fieldError}` : styles.field}>
-                    <label>{f.phone}</label>
+                    <label>{t('fields.phone')}</label>
                     <input
                       type="tel"
-                      placeholder={f.phonePlaceholder}
+                      placeholder={t('fields.phonePlaceholder')}
                       value={form.phone}
                       onChange={e => change('phone', e.target.value)}
                     />
                   </div>
                 </div>
 
-                <div className={styles.field}>
-                  <label>{f.email}</label>
+                <div className={errors.email ? `${styles.field} ${styles.fieldError}` : styles.field}>
+                  <label>{t('fields.email')}</label>
                   <input
                     type="email"
-                    placeholder={f.emailPlaceholder}
+                    placeholder={t('fields.emailPlaceholder')}
                     value={form.email}
                     onChange={e => change('email', e.target.value)}
-                    className={errors.email ? styles.fieldError : ''}
                   />
                 </div>
 
                 <div className={styles.row}>
                   <div className={errors.date ? `${styles.field} ${styles.fieldError}` : styles.field}>
-                    <label>{f.date}</label>
+                    <label>{t('fields.date')}</label>
                     <input
                       type="date"
                       value={form.date}
@@ -144,9 +141,10 @@ export default function ReservationSection() {
                     />
                   </div>
                   <div className={errors.time ? `${styles.field} ${styles.fieldError}` : styles.field}>
-                    <label>{f.time}</label>
+                    <label>{t('fields.time')}</label>
                     <input
                       type="time"
+                      placeholder={t('fields.timePlaceholder')}
                       value={form.time}
                       onChange={e => change('time', e.target.value)}
                     />
@@ -154,9 +152,9 @@ export default function ReservationSection() {
                 </div>
 
                 <div className={errors.guests ? `${styles.field} ${styles.fieldError}` : styles.field}>
-                  <label>{f.guests}</label>
+                  <label>{t('fields.guests')}</label>
                   <select value={form.guests} onChange={e => change('guests', e.target.value)}>
-                    <option value="" disabled>—</option>
+                    <option value="" disabled>{t('fields.guestsPlaceholder')}</option>
                     {GUEST_INDICES.map((i) => (
                       <option key={i} value={t(`guestOptions.${i}`)}>{t(`guestOptions.${i}`)}</option>
                     ))}
@@ -164,9 +162,9 @@ export default function ReservationSection() {
                 </div>
 
                 <div className={styles.field}>
-                  <label>{f.message}</label>
+                  <label>{t('fields.message')}</label>
                   <textarea
-                    placeholder={f.messagePlaceholder}
+                    placeholder={t('fields.messagePlaceholder')}
                     value={form.message}
                     onChange={e => change('message', e.target.value)}
                   />

@@ -29,9 +29,9 @@
       "phone": "Telefon", "phonePlaceholder": "+49 XXX XXXXXXX",
       "email": "E-Mail", "emailPlaceholder": "ihre@email.de",
       "date": "Datum",
-      "time": "Uhrzeit",
-      "guests": "Personenanzahl",
-      "message": "Nachricht / Anmerkung", "messagePlaceholder": "Geburtstagsfeier, Allergien..."
+      "time": "Uhrzeit", "timePlaceholder": "Zeit wählen",
+      "guests": "Personenanzahl", "guestsPlaceholder": "Personenanzahl",
+      "message": "Nachricht / Anmerkung", "messagePlaceholder": "Nachricht (optional)"
     },
     "submitBtn": "Reservieren",
     "whatsappBtn": "WhatsApp",

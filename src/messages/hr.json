@@ -29,9 +29,9 @@
       "phone": "Telefon", "phonePlaceholder": "+385 9X XXX XXXX",
       "email": "Email", "emailPlaceholder": "vas@email.hr",
       "date": "Datum",
-      "time": "Vrijeme",
-      "guests": "Broj osoba",
-      "message": "Poruka / napomena", "messagePlaceholder": "Proslava rođendana, alergije..."
+      "time": "Vrijeme", "timePlaceholder": "Odaberite vrijeme",
+      "guests": "Broj osoba", "guestsPlaceholder": "Broj osoba",
+      "message": "Poruka / napomena", "messagePlaceholder": "Poruka (neobavezno)"
     },
     "submitBtn": "Rezerviraj",
     "whatsappBtn": "WhatsApp",

@@ -29,9 +29,9 @@
       "phone": "Phone", "phonePlaceholder": "+1 XXX XXX XXXX",
       "email": "Email", "emailPlaceholder": "your@email.com",
       "date": "Date",
-      "time": "Time",
-      "guests": "Number of guests",
-      "message": "Message / note", "messagePlaceholder": "Birthday celebration, allergies..."
+      "time": "Time", "timePlaceholder": "Select time",
+      "guests": "Number of guests", "guestsPlaceholder": "Number of guests",
+      "message": "Message / note", "messagePlaceholder": "Message (optional)"
     },
     "submitBtn": "Book table",
     "whatsappBtn": "WhatsApp",
