@@ -12,35 +12,26 @@ export default function MenuPage() {
   const t = useTranslations('menu');
   const [active, setActive] = useState<string>(ALL);
 
-  const HEADER_HEIGHT = 64;   // px — sticky main header
-  const FILTER_HEIGHT = 48;   // px — sticky filter bar
-  const OFFSET = HEADER_HEIGHT + FILTER_HEIGHT + 16; // 16px breathing room
+  const FILTER_IDS = [ALL, ...FILTER_CATEGORIES];
 
-  function scrollToSection(id: string) {
-    const el = document.getElementById(`section-${id}`);
-    if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - OFFSET;
-    window.scrollTo({ top, behavior: 'smooth' });
-  }
+  const scrollToCategory = (categoryId: string) => {
+    const element = document.getElementById(categoryId);
+    if (!element) return;
+    const headerHeight = 64;
+    const filterHeight = 48;
+    const offset = headerHeight + filterHeight + 16;
+    const elementTop = element.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: elementTop - offset, behavior: 'smooth' });
+  };
 
   function handleFilter(id: string) {
     setActive(id);
     if (id === ALL) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      scrollToSection(id);
+      scrollToCategory(id);
     }
   }
-
-  const FILTER_IDS = [ALL, ...FILTER_CATEGORIES];
-
-  // sections to show: if ALL → everything, else only matching + jedla-vopred alongside ryby
-  const visibleSections = active === ALL
-    ? MENU_SECTIONS
-    : MENU_SECTIONS.filter(s =>
-        s.id === active ||
-        (active === 'ryby' && s.id === 'jedla-vopred')
-      );
 
   return (
     <>
@@ -68,10 +59,10 @@ export default function MenuPage() {
             <div className={styles.pageDivider} />
           </div>
 
-          {visibleSections.map((section) => (
+          {MENU_SECTIONS.map((section) => (
             <section
               key={section.id}
-              id={`section-${section.id}`}
+              id={section.id}
               className={styles.section}
             >
               <div className={styles.sectionHeader}>
