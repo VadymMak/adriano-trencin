@@ -259,5 +259,10 @@
     "text": "The payment was cancelled. Your reservation was not confirmed.",
     "retry": "Try again",
     "back": "Back to home page"
+  },
+  "cookieBanner": {
+    "text": "This site uses cookies to improve your experience. Do you agree to their use?",
+    "acceptAll": "Accept all",
+    "necessary": "Necessary only"
   }
 }

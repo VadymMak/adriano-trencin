@@ -4,10 +4,12 @@
    ============================================================ */
 
 /* --- Wrapper ----------------------------------------------- */
+/* Positioned above the WhatsApp button:
+   bottom = fixed-offset (24px) + whatsapp-size (52px) + chat-gap (12px) = 88px */
 .wrapper {
   position: fixed;
-  bottom: calc(var(--spacing-sm) + 72px); /* above WhatsApp btn */
-  right: var(--spacing-sm);
+  bottom: calc(var(--fixed-offset) + var(--whatsapp-size) + var(--chat-gap));
+  right: var(--fixed-offset);
   z-index: var(--z-fixed);
   display: flex;
   flex-direction: column;
@@ -241,12 +243,12 @@
 /* --- Mobile ------------------------------------------------ */
 @media (max-width: 480px) {
   .wrapper {
-    bottom: calc(var(--spacing-sm) + 72px);
-    right: var(--spacing-xs);
+    bottom: calc(var(--fixed-offset) + var(--whatsapp-size) + var(--chat-gap));
+    right: var(--fixed-offset);
   }
 
   .panel {
-    width: calc(100vw - 2rem);
+    width: calc(100vw - calc(var(--fixed-offset) * 2));
     height: 420px;
   }
 }

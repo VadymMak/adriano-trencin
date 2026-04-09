@@ -259,5 +259,10 @@
     "text": "Plaćanje je otkazano. Rezervacija nije potvrđena.",
     "retry": "Pokušajte ponovo",
     "back": "Povratak na početnu stranicu"
+  },
+  "cookieBanner": {
+    "text": "Ova stranica koristi kolačiće za poboljšanje vašeg iskustva. Pristajete li na njihovu upotrebu?",
+    "acceptAll": "Prihvati sve",
+    "necessary": "Samo nužne"
   }
 }

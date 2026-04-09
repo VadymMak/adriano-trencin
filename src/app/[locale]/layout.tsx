@@ -7,6 +7,7 @@ import { getTranslations } from 'next-intl/server';
 import Header from '@/components/layout/Header/Header';
 import Footer from '@/components/layout/Footer/Footer';
 import { ChatWidget } from '@/components/ui/ChatWidget/ChatWidget';
+import { CookieBanner } from '@/components/ui/CookieBanner/CookieBanner';
 import '../../styles/globals.css';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://adriano-trencin.vercel.app';
@@ -84,6 +85,7 @@ export default async function LocaleLayout({
           </div>
           <Footer />
           <ChatWidget />
+          <CookieBanner />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -259,5 +259,10 @@
     "text": "Platba bola zrušená. Rezervácia nebola potvrdená.",
     "retry": "Skúsiť znova",
     "back": "Späť na hlavnú stránku"
+  },
+  "cookieBanner": {
+    "text": "Táto stránka používa cookies na zlepšenie vášho zážitku. Súhlasíte s ich používaním?",
+    "acceptAll": "Prijať všetky",
+    "necessary": "Len nevyhnutné"
   }
 }

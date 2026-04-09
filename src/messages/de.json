@@ -259,5 +259,10 @@
     "text": "Die Zahlung wurde abgebrochen. Die Reservierung wurde nicht bestätigt.",
     "retry": "Erneut versuchen",
     "back": "Zurück zur Startseite"
+  },
+  "cookieBanner": {
+    "text": "Diese Website verwendet Cookies, um Ihr Erlebnis zu verbessern. Stimmen Sie deren Verwendung zu?",
+    "acceptAll": "Alle akzeptieren",
+    "necessary": "Nur notwendige"
   }
 }
