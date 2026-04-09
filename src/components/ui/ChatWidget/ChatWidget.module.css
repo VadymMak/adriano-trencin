@@ -1,0 +1,252 @@
+/* ============================================================
+   ChatWidget.module.css — Adriano Restaurant AI Chat
+   Pattern: smartctx-dev ChatWidget, adapted to adriano CSS vars
+   ============================================================ */
+
+/* --- Wrapper ----------------------------------------------- */
+.wrapper {
+  position: fixed;
+  bottom: calc(var(--spacing-sm) + 72px); /* above WhatsApp btn */
+  right: var(--spacing-sm);
+  z-index: var(--z-fixed);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--spacing-xs);
+}
+
+/* --- Bubble toggle ----------------------------------------- */
+.bubble {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  color: var(--color-bg-primary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  transition: transform var(--transition), box-shadow var(--transition);
+  flex-shrink: 0;
+}
+
+.bubble:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(201, 163, 71, 0.35);
+}
+
+/* --- Chat panel -------------------------------------------- */
+.panel {
+  width: 340px;
+  height: 460px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeUp 200ms ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Header ----------------------------------------------- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-tertiary);
+  flex-shrink: 0;
+}
+
+.headerInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+}
+
+.headerTitle {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-gold);
+  letter-spacing: 0.03em;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition);
+}
+
+.closeBtn:hover {
+  color: var(--color-text-primary);
+}
+
+/* --- Messages --------------------------------------------- */
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  scroll-behavior: smooth;
+}
+
+.emptyState {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+  margin: auto;
+  padding: var(--spacing-md);
+  line-height: 1.6;
+}
+
+.message {
+  max-width: 85%;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.userMessage {
+  background: var(--color-gold);
+  color: var(--color-bg-primary);
+  align-self: flex-end;
+  border-bottom-right-radius: var(--border-radius);
+  font-weight: 500;
+}
+
+.assistantMessage {
+  background: var(--color-bg-card);
+  color: var(--color-text-primary);
+  align-self: flex-start;
+  border: 1px solid var(--color-border);
+  border-bottom-left-radius: var(--border-radius);
+}
+
+/* --- Typing indicator -------------------------------------- */
+.typingIndicator {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+}
+
+.typingIndicator span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+  animation: bounce 1.2s infinite;
+}
+
+.typingIndicator span:nth-child(2) { animation-delay: 0.2s; }
+.typingIndicator span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30%            { transform: translateY(-6px); }
+}
+
+/* --- Error ------------------------------------------------- */
+.errorMessage {
+  font-size: var(--font-size-xs);
+  color: #ef4444;
+  text-align: center;
+  margin: 0;
+}
+
+/* --- Input row --------------------------------------------- */
+.inputRow {
+  display: flex;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-tertiary);
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.input {
+  flex: 1;
+  padding: 0.5rem 0.875rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-family: inherit;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.input:focus {
+  border-color: var(--color-gold);
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.sendBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  color: var(--color-bg-primary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.sendBtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.sendBtn:not(:disabled):hover {
+  transform: scale(1.08);
+}
+
+/* --- Mobile ------------------------------------------------ */
+@media (max-width: 480px) {
+  .wrapper {
+    bottom: calc(var(--spacing-sm) + 72px);
+    right: var(--spacing-xs);
+  }
+
+  .panel {
+    width: calc(100vw - 2rem);
+    height: 420px;
+  }
+}

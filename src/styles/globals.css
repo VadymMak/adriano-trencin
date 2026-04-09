@@ -39,6 +39,13 @@
   --spacing-lg: 4rem;
   --spacing-xl: 8rem;
 
+  /* Typography */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+
   /* Layout */
   --container-max: 1200px;
   --border-radius:    4px;
@@ -47,6 +54,7 @@
   --header-visible:  1;
   --header-height:   64px;
   --filter-height:   48px;
+  --z-fixed: 1000;
 }
 
 *,
