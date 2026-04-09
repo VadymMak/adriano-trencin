@@ -248,5 +248,16 @@
     "facebook": "Facebook",
     "whatsapp": "WhatsApp",
     "mapBtn": "In Google Maps öffnen"
+  },
+  "reservationSuccess": {
+    "title": "Reservierung bestätigt!",
+    "text": "Vielen Dank für Ihre Anzahlung. Wir freuen uns auf Sie!",
+    "back": "Zurück zur Startseite"
+  },
+  "reservationCancel": {
+    "title": "Zahlung abgebrochen",
+    "text": "Die Zahlung wurde abgebrochen. Die Reservierung wurde nicht bestätigt.",
+    "retry": "Erneut versuchen",
+    "back": "Zurück zur Startseite"
   }
 }

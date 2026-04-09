@@ -248,5 +248,16 @@
     "facebook": "Facebook",
     "whatsapp": "WhatsApp",
     "mapBtn": "Otevřít v Google Maps"
+  },
+  "reservationSuccess": {
+    "title": "Rezervace potvrzena!",
+    "text": "Děkujeme za zaplacení zálohy. Těšíme se na vás!",
+    "back": "Zpět na hlavní stránku"
+  },
+  "reservationCancel": {
+    "title": "Platba zrušena",
+    "text": "Platba byla zrušena. Rezervace nebyla potvrzena.",
+    "retry": "Zkusit znovu",
+    "back": "Zpět na hlavní stránku"
   }
 }

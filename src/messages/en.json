@@ -248,5 +248,16 @@
     "facebook": "Facebook",
     "whatsapp": "WhatsApp",
     "mapBtn": "Open in Google Maps"
+  },
+  "reservationSuccess": {
+    "title": "Reservation confirmed!",
+    "text": "Thank you for paying the deposit. We look forward to seeing you!",
+    "back": "Back to home page"
+  },
+  "reservationCancel": {
+    "title": "Payment cancelled",
+    "text": "The payment was cancelled. Your reservation was not confirmed.",
+    "retry": "Try again",
+    "back": "Back to home page"
   }
 }
